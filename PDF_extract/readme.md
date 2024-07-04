@@ -1,24 +1,24 @@
-##1. venv 만들기
+## 1. venv 만들기
 ```python
-python -m venv myenv
-
-##2. 실행
-###Linux
+python -m venv myvenv
+```
+## 2. 실행
+### Linux/Mac OS
+bash
 ```python
-. myenv/bin/activate
-
-###Mac OS
+source myvenv/bin/activate
+```
+### Windows
+cmd
 ```python
-. myenv/bin/activate
+.\myvenv\Scripts\activate
+```
 
-###Windows
-```python
-.\pymupdf-venv\Scripts\activate
-
-##3. 설치
+## 3. 설치
 ```python
 pip install pymupdf opencv-python numpy
-
-##4. 실행
+```
+## 4. 스크립트 실행
 ```python
 python extract.py
+```
