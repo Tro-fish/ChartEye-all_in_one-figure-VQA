@@ -1,0 +1,161 @@
+2024-07-04 19:30:11.878241: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:465] Loaded cuDNN version 8902
+I0000 00:00:1720089013.809014  862295 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+1/1 ━━━━━━━━━━━━━━━━━━━━ 3s 3s/step
+image9_3.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step
+Chart detected and saved: figures/image18_1.png
+image18_1.png has no chart:  [('n06359193', 'web_site', 0.81153953), ('n07565083', 'menu', 0.027325498), ('n03291819', 'envelope', 0.026411247), ('n02786058', 'Band_Aid', 0.010732993), ('n07248320', 'book_jacket', 0.0040914686)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image2_2.png has no chart:  [('n04149813', 'scoreboard', 0.08897218), ('n03196217', 'digital_clock', 0.07642774), ('n04118776', 'rule', 0.07291941), ('n04328186', 'stopwatch', 0.04251879), ('n04264628', 'space_bar', 0.036121678)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step
+image20_7.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step
+image19_5.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image16_2.png
+image16_2.png has no chart:  [('n06359193', 'web_site', 0.123433046), ('n07565083', 'menu', 0.057873514), ('n04149813', 'scoreboard', 0.03246721), ('n03291819', 'envelope', 0.032389987), ('n04118776', 'rule', 0.024793712)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image2_3.png has no chart:  [('n04357314', 'sunscreen', 0.09911716), ('n03690938', 'lotion', 0.046243373), ('n04127249', 'safety_pin', 0.025235051), ('n01930112', 'nematode', 0.023601726), ('n04525038', 'velvet', 0.020650674)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_1.png
+image14_1.png has no chart:  [('n06359193', 'web_site', 0.85531205), ('n07565083', 'menu', 0.056208853), ('n03291819', 'envelope', 0.021724856), ('n06785654', 'crossword_puzzle', 0.0020233325), ('n04152593', 'screen', 0.0010244327)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image4_8.png
+image4_8.png has no chart:  [('n07565083', 'menu', 0.22263373), ('n04149813', 'scoreboard', 0.19193794), ('n04238763', 'slide_rule', 0.08347973), ('n06359193', 'web_site', 0.04377182), ('n03857828', 'oscilloscope', 0.042363603)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step
+Chart detected and saved: figures/image16_3.png
+image16_3.png has no chart:  [('n06359193', 'web_site', 0.17884171), ('n07565083', 'menu', 0.12240293), ('n04118776', 'rule', 0.042945694), ('n06785654', 'crossword_puzzle', 0.039952602), ('n03291819', 'envelope', 0.037039444)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image18_5.png
+image18_5.png has no chart:  [('n07565083', 'menu', 0.17914402), ('n04149813', 'scoreboard', 0.08724881), ('n06359193', 'web_site', 0.06551123), ('n06785654', 'crossword_puzzle', 0.057235055), ('n04118776', 'rule', 0.027402578)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image9_4.png
+image9_4.png has no chart:  [('n03291819', 'envelope', 0.34723392), ('n06359193', 'web_site', 0.22983527), ('n02879718', 'bow', 0.10187937), ('n01930112', 'nematode', 0.09780993), ('n07565083', 'menu', 0.007867501)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_8.png
+image14_8.png has no chart:  [('n06359193', 'web_site', 0.15440147), ('n03291819', 'envelope', 0.056716446), ('n04118776', 'rule', 0.047645412), ('n03196217', 'digital_clock', 0.029022563), ('n06785654', 'crossword_puzzle', 0.028324636)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_5.png has no chart:  [('n03929660', 'pick', 0.17703782), ('n03476684', 'hair_slide', 0.028029397), ('n03825788', 'nipple', 0.025519608), ('n04548280', 'wall_clock', 0.024518734), ('n04192698', 'shield', 0.024222314)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_1.png has no chart:  [('n03929660', 'pick', 0.17703782), ('n03476684', 'hair_slide', 0.028029397), ('n03825788', 'nipple', 0.025519608), ('n04548280', 'wall_clock', 0.024518734), ('n04192698', 'shield', 0.024222314)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image19_2.png
+image19_2.png has no chart:  [('n04238763', 'slide_rule', 0.56114393), ('n04118776', 'rule', 0.04896735), ('n03857828', 'oscilloscope', 0.034092613), ('n06359193', 'web_site', 0.017767496), ('n04264628', 'space_bar', 0.008945896)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image20_4.png
+image20_4.png has no chart:  [('n06359193', 'web_site', 0.8335774), ('n07565083', 'menu', 0.057503406), ('n03291819', 'envelope', 0.0031471618), ('n04149813', 'scoreboard', 0.002158681), ('n06785654', 'crossword_puzzle', 0.0012993116)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image19_4.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image20_5.png
+image20_5.png has no chart:  [('n07565083', 'menu', 0.40585434), ('n06359193', 'web_site', 0.20810004), ('n04238763', 'slide_rule', 0.04357245), ('n03857828', 'oscilloscope', 0.03042674), ('n06785654', 'crossword_puzzle', 0.0293995)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image2_1.png
+image2_1.png has no chart:  [('n03291819', 'envelope', 0.34723392), ('n06359193', 'web_site', 0.22983527), ('n02879718', 'bow', 0.10187937), ('n01930112', 'nematode', 0.09780993), ('n07565083', 'menu', 0.007867501)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image20_3.png
+image20_3.png has no chart:  [('n06359193', 'web_site', 0.18098103), ('n01930112', 'nematode', 0.11698472), ('n03291819', 'envelope', 0.053245634), ('n03532672', 'hook', 0.043423723), ('n04317175', 'stethoscope', 0.029135633)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image18_4.png
+image18_4.png has no chart:  [('n06359193', 'web_site', 0.9008536), ('n07565083', 'menu', 0.022206003), ('n03291819', 'envelope', 0.0032310083), ('n04152593', 'screen', 0.0010469061), ('n02977058', 'cash_machine', 0.0009699063)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image4_10.png
+image4_10.png has no chart:  [('n02708093', 'analog_clock', 0.2510156), ('n04485082', 'tripod', 0.16173159), ('n03729826', 'matchstick', 0.1442497), ('n04548280', 'wall_clock', 0.057880122), ('n06359193', 'web_site', 0.05315663)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_3.png
+image14_3.png has no chart:  [('n03291819', 'envelope', 0.0092866635), ('n03729826', 'matchstick', 0.009123044), ('n04380533', 'table_lamp', 0.008410285), ('n03970156', 'plunger', 0.0077087046), ('n06359193', 'web_site', 0.007562177)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_12.png has no chart:  [('n03998194', 'prayer_rug', 0.15243854), ('n03223299', 'doormat', 0.07420329), ('n04201297', 'shoji', 0.047418367), ('n03733281', 'maze', 0.037909504), ('n02667093', 'abaya', 0.023151062)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_4.png has no chart:  [('n03929660', 'pick', 0.18348011), ('n03825788', 'nipple', 0.034790773), ('n03476684', 'hair_slide', 0.0334679), ('n04116512', 'rubber_eraser', 0.033127613), ('n04548280', 'wall_clock', 0.024028836)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image20_6.png
+image20_6.png has no chart:  [('n04238763', 'slide_rule', 0.15442203), ('n06785654', 'crossword_puzzle', 0.117128834), ('n06359193', 'web_site', 0.07894545), ('n04149813', 'scoreboard', 0.06509736), ('n04118776', 'rule', 0.05244436)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image16_1.png
+image16_1.png has no chart:  [('n06359193', 'web_site', 0.8553087), ('n03291819', 'envelope', 0.010586782), ('n07248320', 'book_jacket', 0.007553862), ('n07565083', 'menu', 0.0052662864), ('n04152593', 'screen', 0.002674367)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image20_2.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_2.png has no chart:  [('n03998194', 'prayer_rug', 0.15243854), ('n03223299', 'doormat', 0.07420329), ('n04201297', 'shoji', 0.047418367), ('n03733281', 'maze', 0.037909504), ('n02667093', 'abaya', 0.023151062)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image16_4.png
+image16_4.png has no chart:  [('n06359193', 'web_site', 0.22376509), ('n04090263', 'rifle', 0.10184443), ('n03633091', 'ladle', 0.045720678), ('n04367480', 'swab', 0.040564455), ('n03873416', 'paddle', 0.025783328)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image4_9.png
+image4_9.png has no chart:  [('n06359193', 'web_site', 0.8113615), ('n01930112', 'nematode', 0.026687462), ('n03291819', 'envelope', 0.008123913), ('n02708093', 'analog_clock', 0.005885035), ('n07565083', 'menu', 0.0054728105)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image19_1.png
+image19_1.png has no chart:  [('n04238763', 'slide_rule', 0.22300094), ('n04118776', 'rule', 0.12593247), ('n03857828', 'oscilloscope', 0.03469273), ('n06359193', 'web_site', 0.02735384), ('n04264628', 'space_bar', 0.012491021)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step
+image14_4.png has no chart:  [('n03729826', 'matchstick', 0.0037273334), ('n04372370', 'switch', 0.0030085973), ('n01930112', 'nematode', 0.0030065153), ('n02002724', 'black_stork', 0.0027852713), ('n03676483', 'lipstick', 0.002769582)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image18_3.png
+image18_3.png has no chart:  [('n04238763', 'slide_rule', 0.5116364), ('n04118776', 'rule', 0.11467753), ('n03857828', 'oscilloscope', 0.043566924), ('n06359193', 'web_site', 0.041455906), ('n06785654', 'crossword_puzzle', 0.01958246)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step
+image6_1.png has no chart:  [('n03929660', 'pick', 0.116225176), ('n03595614', 'jersey', 0.054430667), ('n04409515', 'tennis_ball', 0.04768382), ('n02807133', 'bathing_cap', 0.03604807), ('n07248320', 'book_jacket', 0.030024288)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image9_6.png
+image9_6.png has no chart:  [('n04264628', 'space_bar', 0.049550958), ('n04118776', 'rule', 0.04064876), ('n04238763', 'slide_rule', 0.022276012), ('n04505470', 'typewriter_keyboard', 0.01928988), ('n06359193', 'web_site', 0.01905775)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_3.png has no chart:  [('n03998194', 'prayer_rug', 0.0967464), ('n03223299', 'doormat', 0.0576124), ('n04201297', 'shoji', 0.039387923), ('n03733281', 'maze', 0.035143234), ('n02667093', 'abaya', 0.02665168)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image9_2.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image20_1.png has no chart:  [('n02927161', 'butcher_shop', 0.0012033943), ('n02992211', 'cello', 0.0011926825), ('n03461385', 'grocery_store', 0.0011888029), ('n07614500', 'ice_cream', 0.0011732446), ('n03388549', 'four-poster', 0.0011694035)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image20_8.png
+image20_8.png has no chart:  [('n03291819', 'envelope', 0.44140103), ('n06359193', 'web_site', 0.16117965), ('n02879718', 'bow', 0.063682824), ('n03857828', 'oscilloscope', 0.022706442), ('n01930112', 'nematode', 0.019676067)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_11.png
+image14_11.png has no chart:  [('n06359193', 'web_site', 0.76889265), ('n07565083', 'menu', 0.031035643), ('n03291819', 'envelope', 0.018989919), ('n07248320', 'book_jacket', 0.008081926), ('n03314780', 'face_powder', 0.007861729)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image19_3.png
+image19_3.png has no chart:  [('n03291819', 'envelope', 0.2698317), ('n06359193', 'web_site', 0.21783121), ('n03857828', 'oscilloscope', 0.12002313), ('n01930112', 'nematode', 0.04869976), ('n01770081', 'harvestman', 0.018043432)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_7.png has no chart:  [('n03729826', 'matchstick', 0.2836615), ('n02708093', 'analog_clock', 0.25406554), ('n04548280', 'wall_clock', 0.065229334), ('n03692522', 'loupe', 0.033569865), ('n04485082', 'tripod', 0.033263545)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_6.png
+image14_6.png has no chart:  [('n06359193', 'web_site', 0.76889265), ('n07565083', 'menu', 0.031035643), ('n03291819', 'envelope', 0.018989919), ('n07248320', 'book_jacket', 0.008081926), ('n03314780', 'face_powder', 0.007861729)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image9_7.png
+image9_7.png has no chart:  [('n03291819', 'envelope', 0.40488133), ('n06359193', 'web_site', 0.2251897), ('n02879718', 'bow', 0.044080712), ('n02233338', 'cockroach', 0.017700424), ('n01930112', 'nematode', 0.014224706)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image14_9.png has no chart:  [('n04409515', 'tennis_ball', 0.40306976), ('n03929660', 'pick', 0.12017568), ('n03445777', 'golf_ball', 0.06591), ('n04019541', 'puck', 0.029144695), ('n03942813', 'ping-pong_ball', 0.022705067)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image16_6.png
+image16_6.png has no chart:  [('n07565083', 'menu', 0.17240578), ('n06359193', 'web_site', 0.15267591), ('n04118776', 'rule', 0.07177401), ('n04149813', 'scoreboard', 0.0717138), ('n06785654', 'crossword_puzzle', 0.05420714)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_10.png
+image14_10.png has no chart:  [('n06359193', 'web_site', 0.76889265), ('n07565083', 'menu', 0.031035643), ('n03291819', 'envelope', 0.018989919), ('n07248320', 'book_jacket', 0.008081926), ('n03314780', 'face_powder', 0.007861729)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_11.png has no chart:  [('n03929660', 'pick', 0.17703782), ('n03476684', 'hair_slide', 0.028029397), ('n03825788', 'nipple', 0.025519608), ('n04548280', 'wall_clock', 0.024518734), ('n04192698', 'shield', 0.024222314)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image14_2.png
+image14_2.png has no chart:  [('n06359193', 'web_site', 0.7101966), ('n07565083', 'menu', 0.11017047), ('n07248320', 'book_jacket', 0.009848352), ('n06785654', 'crossword_puzzle', 0.007435135), ('n02892201', 'brass', 0.00396556)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step
+Chart detected and saved: figures/image14_7.png
+image14_7.png has no chart:  [('n06359193', 'web_site', 0.23738858), ('n03314780', 'face_powder', 0.11410082), ('n03291819', 'envelope', 0.0699513), ('n04447861', 'toilet_seat', 0.030081764), ('n02708093', 'analog_clock', 0.016974838)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image9_5.png has no chart:  [('n04238763', 'slide_rule', 0.19760509), ('n04118776', 'rule', 0.085358754), ('n04264628', 'space_bar', 0.08125164), ('n03857828', 'oscilloscope', 0.02748364), ('n03085013', 'computer_keyboard', 0.019960327)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image4_6.png has no chart:  [('n04409515', 'tennis_ball', 0.40306976), ('n03929660', 'pick', 0.12017568), ('n03445777', 'golf_ball', 0.06591), ('n04019541', 'puck', 0.029144695), ('n03942813', 'ping-pong_ball', 0.022705067)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image18_6.png
+image18_6.png has no chart:  [('n07565083', 'menu', 0.16059852), ('n04149813', 'scoreboard', 0.0968993), ('n06359193', 'web_site', 0.055206712), ('n06785654', 'crossword_puzzle', 0.041042842), ('n03291819', 'envelope', 0.026089633)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image9_9.png has no chart:  [('n04238763', 'slide_rule', 0.23053822), ('n04118776', 'rule', 0.07958496), ('n06785654', 'crossword_puzzle', 0.042784806), ('n07565083', 'menu', 0.033939365), ('n04264628', 'space_bar', 0.023083588)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image18_2.png
+image18_2.png has no chart:  [('n04238763', 'slide_rule', 0.49415272), ('n04118776', 'rule', 0.13048686), ('n06359193', 'web_site', 0.036770254), ('n03857828', 'oscilloscope', 0.02335892), ('n06785654', 'crossword_puzzle', 0.023247086)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image9_8.png
+image9_8.png has no chart:  [('n06359193', 'web_site', 0.20652689), ('n07565083', 'menu', 0.18164447), ('n04149813', 'scoreboard', 0.053668275), ('n03291819', 'envelope', 0.040476743), ('n04118776', 'rule', 0.034058467)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+image14_5.png has no chart:  [('n03729826', 'matchstick', 0.0037273334), ('n04372370', 'switch', 0.0030085973), ('n01930112', 'nematode', 0.0030065153), ('n02002724', 'black_stork', 0.0027852713), ('n03676483', 'lipstick', 0.002769582)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image9_1.png
+image9_1.png has no chart:  [('n06359193', 'web_site', 0.5700291), ('n03291819', 'envelope', 0.07107064), ('n03857828', 'oscilloscope', 0.03278705), ('n01930112', 'nematode', 0.032612026), ('n07565083', 'menu', 0.024116473)]
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step
+Chart detected and saved: figures/image16_5.png
+image16_5.png has no chart:  [('n06785654', 'crossword_puzzle', 0.16929257), ('n07565083', 'menu', 0.1282023), ('n04149813', 'scoreboard', 0.06642066), ('n06359193', 'web_site', 0.05192668), ('n04118776', 'rule', 0.02834329)]
