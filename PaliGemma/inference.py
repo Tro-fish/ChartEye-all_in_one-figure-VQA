@@ -28,3 +28,4 @@ with torch.inference_mode():
     generation = generation[0][input_len:]
     decoded = processor.decode(generation, skip_special_tokens=True)
     print(decoded)
+
