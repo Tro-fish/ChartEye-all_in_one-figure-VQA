@@ -60,7 +60,7 @@ def classify_chart_images(input_folder, output_folder):
                     print(f"Chart detected and saved: {chart_image_path}")
 
 
-pdf_path = 'chart.pdf'  # PDF 파일 경로
+pdf_path = 'data.pdf'  # PDF 파일 경로
 output_folder = 'images'  # 추출된 이미지를 저장
 output_folder2 = 'figures' # 추출된 figures를 저장
 extract_images_from_pdf(pdf_path, output_folder)
