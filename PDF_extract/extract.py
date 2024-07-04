@@ -1,39 +1,60 @@
 import fitz  # PyMuPDF
 import os
+import io
 import cv2
 import numpy as np
+import tensorflow as tf
+from PIL import Image
+from tensorflow.keras.applications import EfficientNetB0
+from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 def extract_images_from_pdf(pdf_path, output_folder):
-    # PDF 파일 열기
-    document = fitz.open(pdf_path)
-    
-    # 출력 폴더가 없다면 생성
+    min_width = 100
+    min_height = 100
+    # Create the output directory if it does not exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # 각 페이지를 순회하며 이미지 추출
-    for page_num in range(document.page_count):
-        page = document.load_page(page_num)
-        image_list = page.get_images(full=True)
-        
-        # 페이지 내의 모든 이미지 저장
-        for img_index, img in enumerate(image_list, start=1):
-            xref = img[0]  # 이미지의 xref 번호
-            base_image = document.extract_image(xref)
-            image_bytes = base_image["image"]  # 이미지 데이터
-            
-            # 이미지 파일로 저장
-            image_filename = f"image{page_num + 1}_{img_index}.png"
-            image_filepath = os.path.join(output_folder, image_filename)
-            with open(image_filepath, "wb") as img_file:
-                img_file.write(image_bytes)
-            
-            print(f"Saved {image_filename}")
+    # file path you want to extract images from
+    file = pdf_path
+    # open the file
+    pdf_file = fitz.open(file)
 
-    # 문서 닫기
-    document.close()
+    # Iterate over PDF pages
+    for page_index in range(len(pdf_file)):
+        # Get the page itself
+        page = pdf_file[page_index]
+        # Get image list
+        image_list = page.get_images(full=True)
+        # Print the number of images found on this page
+        if image_list:
+            print(f"[+] Found a total of {len(image_list)} images in page {page_index}")
+        else:
+            print(f"[!] No images found on page {page_index}")
+        # Iterate over the images on the page
+        for image_index, img in enumerate(image_list, start=1):
+            # Get the XREF of the image
+            xref = img[0]
+            # Extract the image bytes
+            base_image = pdf_file.extract_image(xref)
+            image_bytes = base_image["image"]
+            # Get the image extension
+            image_ext = base_image["ext"]
+            # Load it to PIL
+            image = Image.open(io.BytesIO(image_bytes))
+            # Check if the image meets the minimum dimensions and save it
+            if image.width >= min_width and image.height >= min_height:
+                image.save(
+                    open(os.path.join(output_folder, f"image{page_index + 1}_{image_index}.png"), "wb"),
+                    format='PNG')
+            else:
+                print(f"[-] Skipping image {image_index} on page {page_index} due to its small size.")
+
 
 def classify_chart_images(input_folder, output_folder):
+    # 사전 학습된 모델 로드
+    model = EfficientNetB0(weights='imagenet')
+    
     # 출력 폴더 확인 및 생성
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -43,25 +64,28 @@ def classify_chart_images(input_folder, output_folder):
         if filename.endswith(('.png', '.jpg', '.jpeg')):
             file_path = os.path.join(input_folder, filename)
             
-            # 이미지 읽기
+            # 이미지 읽기 및 전처리
             image = cv2.imread(file_path)
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            image_resized = cv2.resize(image, (224, 224))  # 모델 입력 크기에 맞게 조정
+            image_array = tf.keras.preprocessing.image.img_to_array(image_resized)
+            image_array = np.expand_dims(image_array, axis=0)
+            image_array = preprocess_input(image_array)
             
-            # 엣지 검출을 통한 패턴 분석
-            edges = cv2.Canny(gray, 50, 150, apertureSize=3)
+            # 예측 수행
+            predictions = model.predict(image_array)
+            decoded_predictions = decode_predictions(predictions, top=5)[0]
             
-            # 차트의 특징적인 선분 검출
-            lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=50, minLineLength=50, maxLineGap=10)
-            if lines is not None:
-                # 선분이 충분히 많다면 차트로 분류
-                if len(lines) > 10:  # 이 값은 실험적으로 조정해야 할 수 있음
+            # 차트 이미지로 분류
+            for _, label, score in decoded_predictions:
+                if 'web_site' in label or 'scoreboard' in label or 'matchstick' in label or 'slide_rule' in label:
                     chart_image_path = os.path.join(output_folder, filename)
                     cv2.imwrite(chart_image_path, image)
                     print(f"Chart detected and saved: {chart_image_path}")
-
+                    continue
+            print(f"{filename} has no chart: ", decoded_predictions)
 
 pdf_path = 'data.pdf'  # PDF 파일 경로
 output_folder = 'images'  # 추출된 이미지를 저장
-output_folder2 = 'figures' # 추출된 figures를 저장
+output_folder2 = 'figures'  # 추출된 figures를 저장
 extract_images_from_pdf(pdf_path, output_folder)
 classify_chart_images(output_folder, output_folder2)
