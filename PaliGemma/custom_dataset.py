@@ -5,7 +5,6 @@ from tqdm import tqdm
 import random
 import json
 
-
 class CustomDataset(Dataset):
     """
     Create regular PyTorch Dataset. 
@@ -97,5 +96,3 @@ class CustomDataset(Dataset):
         target_sequence = random.choice(self.gt_token_sequences[idx])  # can be more than one, e.g., DocVQA Task 1
 
         return image, target_sequence
-
-

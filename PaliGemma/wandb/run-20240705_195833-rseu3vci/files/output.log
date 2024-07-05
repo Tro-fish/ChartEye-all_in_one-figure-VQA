@@ -1,0 +1,41 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+  | Name  | Type                 | Params | Mode
+-------------------------------------------------------
+0 | model | PeftModelForCausalLM | 1.7 B  | train
+-------------------------------------------------------
+11.3 M    Trainable params
+1.7 B     Non-trainable params
+1.7 B     Total params
+6,948.584 Total estimated model params size (MB)
+Traceback (most recent call last):
+  File "/home/wani/Desktop/Corning_team3/PaliGemma/train.py", line 103, in <module>
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 543, in fit
+    call._call_and_handle_interrupt(
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 579, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 986, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1030, in _run_stage
+    self.fit_loop.run()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 197, in run
+    self.setup_data()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 225, in setup_data
+    train_dataloader = _request_dataloader(source)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 325, in _request_dataloader
+    return data_source.dataloader()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 289, in dataloader
+    return call._call_lightning_module_hook(self.instance.trainer, self.name, pl_module=self.instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 159, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/Desktop/Corning_team3/PaliGemma/model.py", line 65, in train_dataloader
+    return DataLoader(train_dataset, collate_fn=train_collate_fn, batch_size=self.batch_size, shuffle=True, num_workers=16)
+                      ^^^^^^^^^^^^^
+NameError: name 'train_dataset' is not defined
