@@ -11,6 +11,8 @@ import numpy as np
 from docx import Document
 from pdf2docx import Converter
 
+
+##########################preprocess############################
 def is_single_color(image):
     min_val, max_val = image.min(), image.max()
     return max_val - min_val < 10
@@ -25,6 +27,8 @@ def count_unique_colors(idx, image):
     unique_colors = set(tuple(pixel) for row in image for pixel in row)
     print(f"idx{idx}: unique colors: {len(unique_colors)}")
     return len(unique_colors)
+
+##########################extract##############################
 
 def extract_images_from_pptx(pptx_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
