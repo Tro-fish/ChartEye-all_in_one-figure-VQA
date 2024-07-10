@@ -1,0 +1,14 @@
+[
+    {
+        "gold": "the cat is sitting on the mat",
+        "predicted": "the cat is on the mat"
+    },
+    {
+        "gold": "a person is playing a guitar",
+        "predicted": "a man is playing a guitar"
+    },
+    {
+        "gold": "a group of people are playing football",
+        "predicted": "people are playing football"
+    }
+]
