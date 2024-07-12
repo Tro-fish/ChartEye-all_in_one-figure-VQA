@@ -3,6 +3,7 @@ from torch.utils.data import DataLoader
 from nltk import edit_distance
 import lightning as L
 import numpy as np
+import torch
 import re
 
 
@@ -32,7 +33,7 @@ class PaliGemmaModelPLModule(L.LightningModule):
         return loss
 
     def validation_step(self, batch, batch_idx, dataset_idx=0):
-
+        MAX_LENGTH = 512
         input_ids, attention_mask, pixel_values, answers = batch
 
         # autoregressively generate token IDs

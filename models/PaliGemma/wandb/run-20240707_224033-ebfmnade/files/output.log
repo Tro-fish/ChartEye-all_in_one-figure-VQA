@@ -1,0 +1,137 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+  | Name  | Type                 | Params | Mode
+-------------------------------------------------------
+0 | model | PeftModelForCausalLM | 1.7 B  | train
+-------------------------------------------------------
+11.3 M    Trainable params
+1.7 B     Non-trainable params
+1.7 B     Total params
+6,948.584 Total estimated model params size (MB)
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/bitsandbytes/nn/modules.py:426: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 400/400 [02:46<00:00,  2.41it/s, v_num=nade]
+Validation DataLoader 0:   0%|                                                                                                                                         | 0/5 [00:00<?, ?it/s]
+    Answer: <s_total><s_total_price>45,500</s_total_price><s_changeprice>4,500</s_changeprice><s_cashprice>50,000</s_cashprice></s_total><s_menu><s_price>16,500</s_price><s_nm>REAL GANACHE</s_nm><s_cnt>1</s_cnt><sep/><s_price>13,000</s_price><s_nm>EGG TART</s_nm><s_cnt>1</s_cnt><sep/><s_price>16,000</s_price><s_nm>PIZZA TOAST</s_nm><s_cnt>1</s_cnt></s_menu>
+ Normed ED: 0.2645739910313901
+    Answer: <s_total><s_total_price>20,000</s_total_price><s_changeprice>80,000</s_changeprice><s_cashprice>100,000</s_cashprice></s_total><s_sub_total><s_tax_price>1,818</s_tax_price><s_subtotal_price>18,181</s_subtotal_price></s_sub_total><s_menu><s_vatyn>10% Tax Included</s_vatyn><s_unitprice>20,000</s_unitprice><s_price>20,000</s_price><s_nm>S-Ovaltine 50%</s_nm><s_cnt>1</s_cnt></s_menu>
+ Normed ED: 0.1518324607329843
+    Answer: <s_total><s_total_price>41,000</s_total_price><s_menuqty_cnt>1</s_menuqty_cnt><s_changeprice>:9,000</s_changeprice><s_cashprice>50.000</s_cashprice></s_total><s_sub_total><s_subtotal_price>41,000</s_subtotal_price></s_sub_total><s_menu><s_sub><s_price>0</s_price><s_nm>Sedang</s_nm><s_cnt>1</s_cnt></s_sub><s_price>41,000</s_price><s_nm>BBQ Chicken</s_nm><s_cnt>1</s_cnt></s_menu>
+ Normed ED: 0.3157894736842105
+    Answer: <s_total><s_total_price>123,000</s_total_price><s_creditcardprice>123,000</s_creditcardprice></s_total><s_menu><s_price>19,000</s_price><s_nm>POTATO SAUSAGE BREAD</s_nm><s_cnt>1</s_cnt><sep/><s_price>52,000</s_price><s_nm>OREO GREEN TEA SPREAD</s_nm><s_cnt>1</s_cnt><sep/><s_price>52,000</s_price><s_nm>WHITE CHOCO BANANA SPREAD</s_nm><s_cnt>1</s_cnt></s_menu>
+ Normed ED: 0.29436325678496866
+    Answer: <s_total><s_total_price>11,700</s_total_price><s_menuqty_cnt>4.00xITEMs</s_menuqty_cnt><s_changeprice>8,300</s_changeprice><s_cashprice>20,000</s_cashprice></s_total><s_sub_total><s_subtotal_price>11,700</s_subtotal_price></s_sub_total><s_menu><s_unitprice>@6500</s_unitprice><s_price>19,500</s_price><s_nm>TALAM UNGU</s_nm><s_discountprice>-7,800</s_discountprice><s_cnt>3X</s_cnt><sep/><s_unitprice>@0</s_unitprice><s_price>0</s_price><s_nm>MIKA KECIL</s_nm><s_cnt>1X</s_cnt></s_menu>
+ Normed ED: 0.28189300411522633
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1:  34%|███████████████████████████████████████████▏                                                                                     | 134/400 [00:56<01:51,  2.38it/s, v_num=nade]
+
+Epoch 1:  34%|████████████████████████████████████████████▌                                                                                    | 138/400 [00:57<01:49,  2.39it/s, v_num=nade]

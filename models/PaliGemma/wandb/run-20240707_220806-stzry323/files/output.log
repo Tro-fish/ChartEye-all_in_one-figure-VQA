@@ -1,0 +1,52 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+  | Name  | Type                 | Params | Mode
+-------------------------------------------------------
+0 | model | PeftModelForCausalLM | 1.7 B  | train
+-------------------------------------------------------
+11.3 M    Trainable params
+1.7 B     Non-trainable params
+1.7 B     Total params
+6,948.584 Total estimated model params size (MB)
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/bitsandbytes/nn/modules.py:426: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0:  48%|██████████████████████████████████████████████████████████████▏                                                                  | 193/400 [01:19<01:24,  2.44it/s, v_num=y323]
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py:54: Detected KeyboardInterrupt, attempting graceful shutdown...

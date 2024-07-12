@@ -1,0 +1,671 @@
+2024-07-07 22:40:33,451 INFO    StreamThr :5196 [internal.py:wandb_internal():85] W&B internal server running at pid: 5196, started at: 2024-07-07 22:40:33.451238
+2024-07-07 22:40:33,452 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status
+2024-07-07 22:40:33,467 INFO    WriterThread:5196 [datastore.py:open_for_write():87] open: ./wandb/run-20240707_224033-ebfmnade/run-ebfmnade.wandb
+2024-07-07 22:40:33,467 DEBUG   SenderThread:5196 [sender.py:send():379] send: header
+2024-07-07 22:40:33,483 DEBUG   SenderThread:5196 [sender.py:send():379] send: run
+2024-07-07 22:40:33,483 INFO    SenderThread:5196 [sender.py:_setup_resume():749] checking resume status for None/paligemma/ebfmnade
+2024-07-07 22:40:34,124 INFO    SenderThread:5196 [dir_watcher.py:__init__():211] watching files in: ./wandb/run-20240707_224033-ebfmnade/files
+2024-07-07 22:40:34,124 INFO    SenderThread:5196 [sender.py:_start_run_threads():1188] run started: ebfmnade with start time 1720359633.465747
+2024-07-07 22:40:34,126 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: check_version
+2024-07-07 22:40:34,126 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: check_version
+2024-07-07 22:40:34,193 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: run_start
+2024-07-07 22:40:34,196 DEBUG   HandlerThread:5196 [system_info.py:__init__():26] System info init
+2024-07-07 22:40:34,196 DEBUG   HandlerThread:5196 [system_info.py:__init__():41] System info init done
+2024-07-07 22:40:34,196 INFO    HandlerThread:5196 [system_monitor.py:start():194] Starting system monitor
+2024-07-07 22:40:34,197 INFO    SystemMonitor:5196 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-07 22:40:34,197 INFO    HandlerThread:5196 [system_monitor.py:probe():214] Collecting system info
+2024-07-07 22:40:34,197 INFO    SystemMonitor:5196 [interfaces.py:start():188] Started cpu monitoring
+2024-07-07 22:40:34,198 INFO    SystemMonitor:5196 [interfaces.py:start():188] Started disk monitoring
+2024-07-07 22:40:34,198 INFO    SystemMonitor:5196 [interfaces.py:start():188] Started gpu monitoring
+2024-07-07 22:40:34,198 INFO    SystemMonitor:5196 [interfaces.py:start():188] Started memory monitoring
+2024-07-07 22:40:34,198 INFO    SystemMonitor:5196 [interfaces.py:start():188] Started network monitoring
+2024-07-07 22:40:34,212 DEBUG   HandlerThread:5196 [system_info.py:probe():152] Probing system
+2024-07-07 22:40:34,214 DEBUG   HandlerThread:5196 [system_info.py:_probe_git():137] Probing git
+2024-07-07 22:40:34,219 DEBUG   HandlerThread:5196 [system_info.py:_probe_git():145] Probing git done
+2024-07-07 22:40:34,219 DEBUG   HandlerThread:5196 [system_info.py:probe():200] Probing system done
+2024-07-07 22:40:34,219 DEBUG   HandlerThread:5196 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-1024-oem-x86_64-with-glibc2.35', 'python': '3.12.0', 'heartbeatAt': '2024-07-07T13:40:34.212899', 'startedAt': '2024-07-07T13:40:33.449436', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/wani/Desktop/Corning_team3/models/PaliGemma/train.py', 'codePathLocal': 'train.py', 'codePath': 'models/PaliGemma/train.py', 'git': {'remote': 'https://github.com/Tro-fish/Corning_team3.git', 'commit': '43653561b8c1771f9b36ca37991dce93ce8cea9f'}, 'email': 'waniboyy@gmail.com', 'root': '/home/wani/Desktop/Corning_team3', 'host': 'wani', 'username': 'wani', 'executable': '/home/wani/anaconda3/envs/corning/bin/python3', 'cpu_count': 20, 'cpu_count_logical': 28, 'cpu_freq': {'current': 1185.8718214285714, 'min': 800.0, 'max': 5000.0}, 'cpu_freq_per_core': [{'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5256.916, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5500.0, 'min': 800.0, 'max': 5500.0}, {'current': 3728.924, 'min': 800.0, 'max': 5500.0}, {'current': 5500.026, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5171.221, 'min': 800.0, 'max': 5500.0}, {'current': 1063.211, 'min': 800.0, 'max': 5600.0}, {'current': 5324.96, 'min': 800.0, 'max': 5600.0}, {'current': 800.0, 'min': 800.0, 'max': 5600.0}, {'current': 5505.724, 'min': 800.0, 'max': 5600.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5500.113, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 915.3232879638672, 'used': 353.20118713378906}}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 62.618263244628906}}
+2024-07-07 22:40:34,219 INFO    HandlerThread:5196 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-07 22:40:34,219 INFO    HandlerThread:5196 [system_monitor.py:probe():227] Publishing system info
+2024-07-07 22:40:34,219 DEBUG   HandlerThread:5196 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-07-07 22:40:35,125 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_created():271] file/dir created: ./wandb/run-20240707_224033-ebfmnade/files/conda-environment.yaml
+2024-07-07 22:40:35,186 DEBUG   HandlerThread:5196 [system_info.py:_save_conda():224] Saving conda packages done
+2024-07-07 22:40:35,186 INFO    HandlerThread:5196 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-07 22:40:35,187 DEBUG   SenderThread:5196 [sender.py:send():379] send: files
+2024-07-07 22:40:35,187 INFO    SenderThread:5196 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-07-07 22:40:35,210 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: python_packages
+2024-07-07 22:40:35,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: python_packages
+2024-07-07 22:40:35,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:40:35,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:40:35,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:35,468 DEBUG   SenderThread:5196 [sender.py:send():379] send: telemetry
+2024-07-07 22:40:35,468 DEBUG   SenderThread:5196 [sender.py:send():379] send: telemetry
+2024-07-07 22:40:35,469 DEBUG   SenderThread:5196 [sender.py:send():379] send: metric
+2024-07-07 22:40:35,469 DEBUG   SenderThread:5196 [sender.py:send():379] send: telemetry
+2024-07-07 22:40:35,469 DEBUG   SenderThread:5196 [sender.py:send():379] send: metric
+2024-07-07 22:40:35,469 WARNING SenderThread:5196 [sender.py:send_metric():1405] Seen metric with glob (shouldn't happen)
+2024-07-07 22:40:35,861 INFO    wandb-upload_0:5196 [upload_job.py:push():130] Uploaded file /tmp/tmp78eaecvowandb/ippkfv5u-wandb-metadata.json
+2024-07-07 22:40:36,125 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_created():271] file/dir created: ./wandb/run-20240707_224033-ebfmnade/files/wandb-metadata.json
+2024-07-07 22:40:36,125 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_created():271] file/dir created: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:36,125 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_created():271] file/dir created: ./wandb/run-20240707_224033-ebfmnade/files/requirements.txt
+2024-07-07 22:40:36,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:37,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:38,125 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:38,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:38,632 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:40:39,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:40,126 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:40,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:41,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:42,126 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:42,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:43,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:43,661 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:40:44,127 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:44,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:45,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:46,127 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:46,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:47,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:48,127 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:48,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:48,694 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:40:49,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:50,128 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:50,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:40:50,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:40:50,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:51,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:52,128 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:52,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:53,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:54,060 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:40:54,129 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:54,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:55,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:56,129 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:56,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:57,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:58,129 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:40:58,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:59,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:40:59,344 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:00,129 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:00,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:01,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:02,130 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:02,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:03,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:04,130 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:04,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:04,475 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:05,130 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/config.yaml
+2024-07-07 22:41:05,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:41:05,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:41:05,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:06,131 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:06,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:07,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:08,131 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:08,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:09,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:09,976 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:10,131 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:10,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:11,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:12,132 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:12,215 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:13,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:14,132 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:14,225 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:15,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:15,225 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:16,132 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:16,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:17,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:18,133 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:18,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:19,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:20,133 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:20,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:41:20,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:41:20,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:20,486 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:21,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:22,133 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:22,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:23,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:24,134 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:24,226 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:25,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:25,521 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:26,134 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:26,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:27,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:28,134 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:28,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:29,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:30,135 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:30,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:30,740 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:31,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:32,135 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:32,227 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:33,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:34,136 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:34,199 DEBUG   SystemMonitor:5196 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-07-07 22:41:34,199 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:41:34,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:35,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:41:35,211 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:41:35,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:36,027 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:36,136 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:36,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:37,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:38,136 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:38,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:39,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:40,137 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:40,228 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:41,223 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:41,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:42,137 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:42,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:43,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:44,137 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:44,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:45,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:46,138 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:46,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:46,534 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:47,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:48,138 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:48,229 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:49,240 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:50,138 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:50,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:41:50,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:41:50,239 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:51,240 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:51,626 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:52,139 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:52,240 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:53,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:54,139 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:54,248 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:55,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:56,139 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:56,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:56,877 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:41:57,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:58,140 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:41:58,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:41:59,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:00,140 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:00,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:01,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:02,140 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:02,143 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:02,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:03,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:04,141 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:04,200 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:42:04,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:05,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:42:05,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:42:05,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:06,141 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:06,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:07,249 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:07,443 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:08,141 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:08,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:09,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:10,142 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:10,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:11,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:12,142 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:12,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:12,653 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:13,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:14,142 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:14,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:15,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:16,143 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:16,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:17,250 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:17,725 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:18,143 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:18,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:19,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:20,143 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:20,211 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:42:20,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:42:20,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:21,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:22,144 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:22,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:22,810 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:23,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:24,144 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:24,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:25,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:26,144 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:26,251 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:27,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:28,011 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:28,145 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:28,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:29,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:30,145 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:30,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:31,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:32,145 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:32,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:33,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:33,339 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:34,146 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:34,200 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:42:34,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:35,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:42:35,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:42:35,252 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:36,146 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:36,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:37,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:38,146 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:38,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:38,755 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:39,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:40,147 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:40,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:41,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:42,147 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:42,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:43,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:43,870 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:44,148 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:44,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:45,253 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:46,148 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:46,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:47,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:48,148 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:48,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:49,235 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:49,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:50,149 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:50,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:42:50,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:42:50,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:51,258 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:52,149 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:52,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:53,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:54,149 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:54,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:54,490 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:42:55,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:56,150 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:56,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:57,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:58,150 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:42:58,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:59,259 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:42:59,501 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:00,150 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:00,289 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:01,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:02,151 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:02,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:03,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:04,151 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:04,200 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:43:04,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:04,529 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:05,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:43:05,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:43:05,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:06,152 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:06,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:07,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:08,152 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:08,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:09,260 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:09,542 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:10,152 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:10,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:11,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:12,153 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:12,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:13,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:14,153 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:14,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:14,649 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:15,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:16,153 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:16,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:17,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:18,154 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:18,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:19,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:19,679 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:20,154 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:20,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:43:20,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:43:20,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:21,261 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:21,657 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-07 22:43:21,657 DEBUG   SenderThread:5196 [sender.py:send():379] send: metric
+2024-07-07 22:43:21,658 DEBUG   SenderThread:5196 [sender.py:send():379] send: metric
+2024-07-07 22:43:21,658 DEBUG   SenderThread:5196 [sender.py:send():379] send: history
+2024-07-07 22:43:21,658 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: summary_record
+2024-07-07 22:43:21,658 INFO    SenderThread:5196 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-07 22:43:22,154 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:22,154 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_created():271] file/dir created: ./wandb/run-20240707_224033-ebfmnade/files/wandb-summary.json
+2024-07-07 22:43:22,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:23,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:24,155 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:24,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:24,971 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:25,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:26,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:27,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:28,262 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:29,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:30,216 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:30,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:31,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:32,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:33,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:34,200 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:43:34,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:35,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:43:35,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:43:35,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:35,440 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:36,157 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:36,263 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:37,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:38,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:39,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:40,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:41,218 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:41,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:42,158 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/config.yaml
+2024-07-07 22:43:42,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:43,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:44,264 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:45,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:46,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:47,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:47,422 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:48,159 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:48,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:49,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:50,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:43:50,212 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:43:50,265 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:51,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:52,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:52,464 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:53,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:54,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:55,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:56,160 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:43:56,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:57,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:58,217 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:43:58,266 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:43:59,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:00,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:01,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:02,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:03,218 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:03,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:04,201 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:44:04,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:05,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:44:05,213 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:44:05,267 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:06,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:07,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:08,162 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:08,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:08,686 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:09,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:10,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:11,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:12,268 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:13,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:14,218 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:14,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:15,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:16,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:17,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:18,269 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:18,437 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-07 22:44:18,438 DEBUG   SenderThread:5196 [sender.py:send():379] send: metric
+2024-07-07 22:44:18,438 DEBUG   SenderThread:5196 [sender.py:send():379] send: history
+2024-07-07 22:44:18,438 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: summary_record
+2024-07-07 22:44:18,438 INFO    SenderThread:5196 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-07 22:44:19,164 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/wandb-summary.json
+2024-07-07 22:44:19,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:19,439 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:20,165 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:20,212 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:44:20,213 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:44:20,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:21,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:22,165 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:22,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:23,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:24,165 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:24,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:24,640 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:25,270 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:26,166 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:26,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:27,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:28,166 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:28,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:29,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:29,786 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:30,166 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:30,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:31,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:32,167 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:32,271 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:33,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:34,167 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:34,201 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:44:34,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:34,986 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:35,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:44:35,213 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:44:35,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:36,168 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:36,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:37,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:38,168 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:38,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:39,272 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:40,168 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:40,214 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:40,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:41,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:42,169 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:42,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:43,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:44,169 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:44,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:45,219 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:45,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:46,169 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:46,169 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/config.yaml
+2024-07-07 22:44:46,273 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:47,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:48,170 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:48,280 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:49,280 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:50,170 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:50,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:44:50,213 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:44:50,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:50,438 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:51,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:52,170 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:52,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:53,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:54,171 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:54,281 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:55,293 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:55,636 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:44:56,171 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:56,285 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:57,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:58,172 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:44:58,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:44:59,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:00,172 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:00,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:00,692 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:45:01,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:02,172 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:02,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:03,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:04,173 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:04,202 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:45:04,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:05,213 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-07 22:45:05,213 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: stop_status
+2024-07-07 22:45:05,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:05,749 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:45:06,173 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:06,294 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:07,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:08,173 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:08,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:09,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:10,174 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:10,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:10,784 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:45:11,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:12,174 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:12,295 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:13,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:14,175 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:14,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:15,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:16,175 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:16,194 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:45:16,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:17,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:18,175 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:18,298 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-07 22:45:18,939 DEBUG   SenderThread:5196 [sender.py:send():379] send: exit
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:send_exit():586] handling exit code: 0
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:send_exit():588] handling runtime: 284
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:send_exit():594] send defer
+2024-07-07 22:45:18,939 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,939 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 0
+2024-07-07 22:45:18,939 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-07-07 22:45:18,939 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 1
+2024-07-07 22:45:18,940 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,940 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 1
+2024-07-07 22:45:18,940 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,940 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-07-07 22:45:18,940 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 2
+2024-07-07 22:45:18,940 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,940 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 2
+2024-07-07 22:45:18,940 INFO    HandlerThread:5196 [system_monitor.py:finish():203] Stopping system monitor
+2024-07-07 22:45:18,940 INFO    HandlerThread:5196 [interfaces.py:finish():200] Joined cpu monitor
+2024-07-07 22:45:18,940 DEBUG   SystemMonitor:5196 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-07-07 22:45:18,940 DEBUG   SystemMonitor:5196 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-07-07 22:45:18,941 INFO    HandlerThread:5196 [interfaces.py:finish():200] Joined disk monitor
+2024-07-07 22:45:18,978 INFO    HandlerThread:5196 [interfaces.py:finish():200] Joined gpu monitor
+2024-07-07 22:45:18,979 INFO    HandlerThread:5196 [interfaces.py:finish():200] Joined memory monitor
+2024-07-07 22:45:18,979 INFO    HandlerThread:5196 [interfaces.py:finish():200] Joined network monitor
+2024-07-07 22:45:18,979 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,979 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-07-07 22:45:18,979 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 3
+2024-07-07 22:45:18,979 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,979 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 3
+2024-07-07 22:45:18,979 DEBUG   SenderThread:5196 [sender.py:send():379] send: stats
+2024-07-07 22:45:18,979 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,979 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-07-07 22:45:18,979 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 4
+2024-07-07 22:45:18,979 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,979 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 4
+2024-07-07 22:45:18,980 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 5
+2024-07-07 22:45:18,980 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,980 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 5
+2024-07-07 22:45:18,980 DEBUG   SenderThread:5196 [sender.py:send():379] send: summary
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-07 22:45:18,980 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 6
+2024-07-07 22:45:18,980 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,980 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 6
+2024-07-07 22:45:18,980 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 7
+2024-07-07 22:45:18,980 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: status_report
+2024-07-07 22:45:18,980 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:18,980 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 7
+2024-07-07 22:45:18,980 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:18,980 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-07-07 22:45:19,176 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/wandb-summary.json
+2024-07-07 22:45:19,724 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 8
+2024-07-07 22:45:19,724 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:19,724 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 8
+2024-07-07 22:45:19,724 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:19,725 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-07-07 22:45:19,725 INFO    SenderThread:5196 [job_builder.py:build():440] Attempting to build job artifact
+2024-07-07 22:45:19,725 INFO    SenderThread:5196 [job_builder.py:_get_source_type():569] is repo sourced job
+2024-07-07 22:45:19,733 INFO    SenderThread:5196 [job_builder.py:build():545] adding wandb-job metadata file
+2024-07-07 22:45:19,738 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 9
+2024-07-07 22:45:19,738 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:19,738 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 9
+2024-07-07 22:45:19,738 DEBUG   SenderThread:5196 [sender.py:send():379] send: artifact
+2024-07-07 22:45:19,939 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: poll_exit
+2024-07-07 22:45:20,176 INFO    Thread-12 :5196 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:21,614 INFO    SenderThread:5196 [sender.py:send_artifact():1530] sent artifact job-https___github.com_Tro-fish_Corning_team3.git_models_PaliGemma_train.py - {'id': 'QXJ0aWZhY3Q6OTQ4MDY4OTIx', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI0NjQ5OTkwNQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6OTQ4MDY4OTIx', 'versionIndex': 2}}}
+2024-07-07 22:45:21,614 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:21,614 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-07-07 22:45:21,614 INFO    SenderThread:5196 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():388] scan: ./wandb/run-20240707_224033-ebfmnade/files
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/output.log output.log
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/conda-environment.yaml conda-environment.yaml
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/requirements.txt requirements.txt
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/config.yaml config.yaml
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/wandb-summary.json wandb-summary.json
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [dir_watcher.py:finish():402] scan save: ./wandb/run-20240707_224033-ebfmnade/files/wandb-metadata.json wandb-metadata.json
+2024-07-07 22:45:22,177 INFO    SenderThread:5196 [sender.py:transition_state():614] send defer: 10
+2024-07-07 22:45:22,177 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: poll_exit
+2024-07-07 22:45:22,178 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: defer
+2024-07-07 22:45:22,178 INFO    HandlerThread:5196 [handler.py:handle_request_defer():184] handle defer: 10
+2024-07-07 22:45:22,180 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: defer
+2024-07-07 22:45:22,180 INFO    SenderThread:5196 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-07-07 22:45:22,180 INFO    SenderThread:5196 [file_pusher.py:finish():169] shutting down file pusher
+2024-07-07 22:45:22,485 WARNING StreamThr :5196 [internal.py:is_dead():413] Internal process exiting, parent pid 4497 disappeared
+2024-07-07 22:45:22,485 ERROR   StreamThr :5196 [internal.py:wandb_internal():151] Internal process shutdown.
+2024-07-07 22:45:22,668 INFO    wandb-upload_3:5196 [upload_job.py:push():130] Uploaded file ./wandb/run-20240707_224033-ebfmnade/files/config.yaml
+2024-07-07 22:45:22,671 INFO    wandb-upload_2:5196 [upload_job.py:push():130] Uploaded file ./wandb/run-20240707_224033-ebfmnade/files/requirements.txt
+2024-07-07 22:45:22,673 INFO    wandb-upload_4:5196 [upload_job.py:push():130] Uploaded file ./wandb/run-20240707_224033-ebfmnade/files/wandb-summary.json
+2024-07-07 22:45:22,680 INFO    wandb-upload_1:5196 [upload_job.py:push():130] Uploaded file ./wandb/run-20240707_224033-ebfmnade/files/conda-environment.yaml
+2024-07-07 22:45:22,770 INFO    wandb-upload_0:5196 [upload_job.py:push():130] Uploaded file ./wandb/run-20240707_224033-ebfmnade/files/output.log
+2024-07-07 22:45:22,940 DEBUG   HandlerThread:5196 [handler.py:handle_request():158] handle_request: poll_exit
+2024-07-07 22:45:22,940 INFO    HandlerThread:5196 [handler.py:finish():882] shutting down handler
+2024-07-07 22:45:22,940 INFO    WriterThread:5196 [datastore.py:close():296] close: ./wandb/run-20240707_224033-ebfmnade/run-ebfmnade.wandb
+2024-07-07 22:45:22,940 DEBUG   SenderThread:5196 [sender.py:send_request():406] send_request: poll_exit
+2024-07-07 22:45:22,940 INFO    SenderThread:5196 [sender.py:finish():1608] shutting down sender
+2024-07-07 22:45:22,940 INFO    SenderThread:5196 [file_pusher.py:finish():169] shutting down file pusher
+2024-07-07 22:45:22,940 INFO    SenderThread:5196 [file_pusher.py:join():175] waiting for file pusher
+2024-07-07 22:45:22,971 INFO    Thread-11 (_thread_body):5196 [sender.py:transition_state():614] send defer: 11
+2024-07-07 22:45:23,441 INFO    SenderThread:5196 [file_stream.py:finish():601] file stream finish called
+2024-07-07 22:45:23,637 INFO    SenderThread:5196 [file_stream.py:finish():605] file stream finish is done

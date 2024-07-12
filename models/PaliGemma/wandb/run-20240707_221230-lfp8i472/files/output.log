@@ -1,0 +1,136 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+  | Name  | Type                 | Params | Mode
+-------------------------------------------------------
+0 | model | PeftModelForCausalLM | 1.7 B  | train
+-------------------------------------------------------
+11.3 M    Trainable params
+1.7 B     Non-trainable params
+1.7 B     Total params
+6,948.584 Total estimated model params size (MB)
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/bitsandbytes/nn/modules.py:426: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 398/400 [02:45<00:00,  2.41it/s, v_num=i472]
+Epoch 0: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 400/400 [02:46<00:00,  2.41it/s, v_num=i472]
+Validation DataLoader 0:   0%|                                                                                                                                         | 0/5 [00:00<?, ?it/s]
+  File "/home/wani/Desktop/Corning_team3/models/PaliGemma/train.py", line 99, in <module>
+    trainer.fit(model_module)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 543, in fit
+    call._call_and_handle_interrupt(
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 579, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 986, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1030, in _run_stage
+    self.fit_loop.run()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 205, in run
+    self.advance()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 363, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 141, in run
+    self.on_advance_end(data_fetcher)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 295, in on_advance_end
+    self.val_loop.run()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 135, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 396, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 311, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/lightning/pytorch/strategies/strategy.py", line 411, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/Desktop/Corning_team3/models/PaliGemma/model.py", line 41, in validation_step
+    pixel_values=pixel_values, max_new_tokens=MAX_LENGTH)
+                                              ^^^^^^^^^^
+NameError: name 'MAX_LENGTH' is not defined

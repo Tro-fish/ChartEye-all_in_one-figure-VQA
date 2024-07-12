@@ -1,5 +1,17 @@
 import numpy as np
 from scipy import optimize
+from scipy.optimize import linear_sum_assignment
+
+
+# Example data
+target_table = """title | my table
+year | argentina | brazil
+1999 | 200 | 158
+"""
+prediction_table = """title | my table
+time | argina | brdfil
+1999 | 145 | 123
+"""
 
 # Function to parse tables from a given text format
 def parse_table(text):
@@ -62,15 +74,45 @@ def compute_rms(target_headers, target_rows, prediction_headers, prediction_rows
     
     return RMS_precision, RMS_recall, RMS_F1
 
-# Example data
-target_table = """title | my table
-year | argentina | brazil
-1999 | 200 | 158
-"""
-prediction_table = """title | my table
-time | argina | brdfil
-1999 | 145 | 123
-"""
+def extract_numbers(table):
+    lines = table.strip().split('\n')
+    numbers = []
+    for line in lines:
+        parts = line.split('|')
+        for part in parts:
+            part = part.strip()
+            try:
+                number = float(part)
+                numbers.append(number)
+            except ValueError:
+                continue
+    return numbers
+
+def relative_distance(p, t):
+    return min(1, abs(p - t) / abs(t))
+
+def compute_rnss(target_table, prediction_table):
+    target_numbers = extract_numbers(target_table)
+    prediction_numbers = extract_numbers(prediction_table)
+    
+    if not target_numbers and not prediction_numbers:
+        return 1.0
+    if not target_numbers or not prediction_numbers:
+        return 0.0
+    
+    N = len(prediction_numbers)
+    M = len(target_numbers)
+    max_len = max(N, M)
+    
+    cost_matrix = np.zeros((N, M))
+    for i, p in enumerate(prediction_numbers):
+        for j, t in enumerate(target_numbers):
+            cost_matrix[i, j] = relative_distance(p, t)
+    
+    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+    rnss = 1 - cost_matrix[row_ind, col_ind].sum() / max_len
+    return rnss
+
 
 # Parse tables
 target_headers, target_rows = parse_table(target_table)
@@ -79,7 +121,10 @@ prediction_headers, prediction_rows = parse_table(prediction_table)
 # Compute RMS
 precision, recall, f1 = compute_rms(target_headers, target_rows, prediction_headers, prediction_rows)
 
-# Output results
+# Compute RNSS
+rnss_score = compute_rnss(target_table, prediction_table)
+
+print("RNSS Score:", rnss_score)
 print(f"RMS Precision: {precision}")
 print(f"RMS Recall: {recall}")
 print(f"RMS F1 Score: {f1}")

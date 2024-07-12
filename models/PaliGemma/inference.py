@@ -3,11 +3,11 @@ from PIL import Image
 import requests
 import torch
 
-model_id = "google/paligemma-3b-mix-448"
+model_id = "google/paligemma-3b-ft-scicap-448"
 device = "cuda:0"
 dtype = torch.bfloat16
 
-image_path = "../test_images/scicap1.png"
+image_path = "/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/images/000007424364.png"
 image = Image.open(image_path).convert("RGB")
 model = PaliGemmaForConditionalGeneration.from_pretrained(
     model_id,
@@ -19,7 +19,7 @@ model = PaliGemmaForConditionalGeneration.from_pretrained(
 processor = AutoProcessor.from_pretrained(model_id)
 
 # Instruct the model to create a caption in Spanish
-prompt = "Explain what the following chart means in the form of a caption in a paper."
+prompt = ""
 model_inputs = processor(text=prompt, images=image, return_tensors="pt").to(model.device)
 input_len = model_inputs["input_ids"].shape[-1]
 
