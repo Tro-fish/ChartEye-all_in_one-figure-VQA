@@ -6,12 +6,12 @@ import torch
 import json
 
 model_id = "google/paligemma-3b-ft-scicap-448"
-device = "cuda:1"
-dtype = torch.bfloat16
+device = "cuda:0"
 prompt = "caption en\n"
+dtype = torch.bfloat16
 image_path_prefix = "/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/images/"
 
-with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation.json", 'r') as f:
+with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation_v2.json", 'r') as f:
     validation_data = json.load(f)
 
 model = PaliGemmaForConditionalGeneration.from_pretrained(

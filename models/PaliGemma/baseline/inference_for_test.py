@@ -6,12 +6,12 @@ import torch
 import json
 
 model_id = "google/paligemma-3b-mix-448"
-device = "cuda:1"
+device = "cuda:0"
 dtype = torch.bfloat16
 prompt = "caption en\n"
 image_path_prefix = "/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/images/"
 
-with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation.json", 'r') as f:
+with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation_v2.json", 'r') as f:
     validation_data = json.load(f)
 
 model = PaliGemmaForConditionalGeneration.from_pretrained(
@@ -34,5 +34,5 @@ for data in tqdm(validation_data, total=len(validation_data)):
         generation = generation[0][input_len:]
         decoded = processor.decode(generation, skip_special_tokens=True)
         result.append({"predition":decoded, "gold":data['caption']})
-        with open('./paligemma-3b-mix-448.json', 'w') as f:
+        with open('/home/wani/Desktop/Corning_team3/evaluation/validation_data/paligemma-3b-mix-448.json', 'w') as f:
             json.dump(result, f, indent=4)
