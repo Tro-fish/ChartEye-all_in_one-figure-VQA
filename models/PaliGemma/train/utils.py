@@ -1,7 +1,7 @@
 from transformers import AutoProcessor
 
-REPO_ID = "google/paligemma-3b-pt-224"
-PROMPT = "extract JSON."
+REPO_ID = "google/paligemma-3b-ft-scicap-448"
+PROMPT = "caption en\n"
 MAX_LENGTH = 512
 processor = AutoProcessor.from_pretrained(REPO_ID)
 

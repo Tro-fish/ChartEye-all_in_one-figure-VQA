@@ -1,52 +1,41 @@
-from torch.utils.data import Dataset
-from datasets import load_dataset
-from typing import Any, List, Dict
-from tqdm import tqdm
-import random
+import os
 import json
+from torch.utils.data import Dataset
+from typing import Any, Dict
+from PIL import Image
+from tqdm import tqdm
 
 class CustomDataset(Dataset):
     """
-    Create regular PyTorch Dataset. 
+    Create regular PyTorch Dataset.
     
-    This class takes a HuggingFace Dataset as input.
-
-    Each row, consists of image path(png/jpg/jpeg) and gt data (json/jsonl/txt).
+    This class takes a custom dataset consisting of images and their corresponding captions.
     """
 
     def __init__(
         self,
-        dataset_name_or_path: str,
-        split: str = "train",
+        image_folder: str,
+        json_file_path: str,
         sort_json_key: bool = True,
     ):
         super().__init__()
 
-        self.split = split
+        self.image_folder = image_folder
         self.sort_json_key = sort_json_key
 
-        self.dataset = load_dataset(dataset_name_or_path, split=self.split)
+        with open(json_file_path, 'r') as f:
+            self.dataset = json.load(f)
+        
         self.dataset_length = len(self.dataset)
-
         self.gt_token_sequences = []
 
         for sample in tqdm(self.dataset, total=self.dataset_length, desc="Processing samples"):
-            ground_truth = json.loads(sample["ground_truth"])
-            if "gt_parses" in ground_truth:  # when multiple ground truths are available, e.g., docvqa
-                assert isinstance(ground_truth["gt_parses"], list) # if ground_truth["gt_parses"] is not list then assert
-                gt_jsons = ground_truth["gt_parses"]
-            else:
-                assert "gt_parse" in ground_truth and isinstance(ground_truth["gt_parse"], dict)
-                gt_jsons = [ground_truth["gt_parse"]]
-
+            ground_truth = {"text_sequence": sample["caption"]}
             self.gt_token_sequences.append(
-                [
-                    self.json2token(
-                        gt_json,
-                        sort_json_key=self.sort_json_key,
-                    )
-                    for gt_json in gt_jsons  # load json from list of json
-                ]
+                self.json2token(
+                    ground_truth,
+                    sort_json_key=self.sort_json_key,
+                )
             )
 
     def json2token(self, obj: Any, sort_json_key: bool = True):
@@ -86,13 +75,20 @@ class CustomDataset(Dataset):
         Returns one item of the dataset.
 
         Returns:
-            image : the original Receipt image
+            image : the original image
             target_sequence(text string) : tokenized ground truth sequence
         """
         sample = self.dataset[idx]
 
-        # inputs
-        image = sample["image"]
-        target_sequence = random.choice(self.gt_token_sequences[idx])  # can be more than one, e.g., DocVQA Task 1
+        # Construct image file path from image_id
+        image_id = sample["image_id"]
+        image_filename = f"{image_id:012d}.png"
+        image_path = os.path.join(self.image_folder, image_filename)
+
+        # Load image
+        image = Image.open(image_path).convert("RGB")
+
+        # Get the target sequence
+        target_sequence = self.gt_token_sequences[idx]
 
         return image, target_sequence

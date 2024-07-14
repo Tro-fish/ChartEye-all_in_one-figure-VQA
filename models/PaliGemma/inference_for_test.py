@@ -1,3 +1,4 @@
+
 from transformers import AutoProcessor, PaliGemmaForConditionalGeneration
 from PIL import Image
 from tqdm import tqdm
@@ -6,19 +7,19 @@ import torch
 import json
 
 model_id = "google/paligemma-3b-ft-scicap-448"
-device = "cuda:0"
+device = "cuda:1"
 prompt = "caption en\n"
 dtype = torch.bfloat16
 image_path_prefix = "/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/images/"
-
+checkpoint_path = '/home/wani/Desktop/Corning_team3/models/PaliGemma/train/checkpoints/'
 with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation_v2.json", 'r') as f:
     validation_data = json.load(f)
 
+# 모델을 체크포인트에서 불러옴
 model = PaliGemmaForConditionalGeneration.from_pretrained(
-    model_id,
+    checkpoint_path,
     torch_dtype=dtype,
     device_map=device,
-    revision="bfloat16",
 ).eval()
 
 processor = AutoProcessor.from_pretrained(model_id)
@@ -35,5 +36,3 @@ for data in tqdm(validation_data, total=len(validation_data)):
         result.append({"predition":decoded, "gold":data['caption']})
         with open('/home/wani/Desktop/Corning_team3/models/PaliGemma/paligemma-3b-ft-scicap-448_validation.json', 'w') as f:
             json.dump(result, f, indent=4)
-
-
