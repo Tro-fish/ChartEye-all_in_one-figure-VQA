@@ -3,22 +3,36 @@
 ```python
 pip install opencv-python numpy python-pptx python-docx PyMuPDF pillow pdf2docx paddlepaddle paddleocr
 ```
+-----------------------------------------------
 ### 2.extract.py 
-extract_images_from_pptx
-extract_images_from_docx
-extract_images_from_pdf 
+extract_images_from_pptx(pptx_path, output_folder):
+
+extract_images_from_docx(docx_path, output_folder)
+
+extract_images_from_pdf(pdf_path, output_folder)
+
 입력: 파일주소, 생성될 이미지 폴더
+
+
 -> 파일로부터 이미지를 추출하여 폴더가 생성됨
+
 -> 폴더 생성안하고 os모듈을 이용하여 코드상에서 받아서 처리해도됨 (현재는 디버깅 떄문)
 
-extract_image_from_text
+-----------------------------------------------
+
+extract_image_from_text(figure_path)
+
 입력: 모델로부터 생성된 figure 폴더
+
 출력: figure안에 있는 텍스트
 
+-----------------------------------------------
 ### 3.classify.py
-classify_chart_images
+classify_chart_images(model, image_folder, figure_folder, device)
+
 입력: 모델, 추출된 이미지 폴더, 분류될 figure 폴더, device(cpu인지 gpu인지)
 
+-----------------------------------------------
 ### 4.사용 순서도 
 ```python
 1.모듈 임포트 및 모델 로드
