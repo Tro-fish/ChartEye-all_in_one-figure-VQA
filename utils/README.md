@@ -1,5 +1,5 @@
 ### 1.extract.py에 필요한 모듈 설치
-아나콘다로 가상환경에서 설치 추천드림
+아나콘다로 가상환경에서 설치 추천드립니다
 ```python
 pip install opencv-python numpy python-pptx python-docx PyMuPDF pillow pdf2docx paddlepaddle paddleocr
 ```
