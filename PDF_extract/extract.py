@@ -9,8 +9,8 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 def extract_images_from_pdf(pdf_path, output_folder):
-    min_width = 100
-    min_height = 100
+    min_width = 0
+    min_height = 0
     # Create the output directory if it does not exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
