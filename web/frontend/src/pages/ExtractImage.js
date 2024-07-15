@@ -2,19 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ImageList from '../components/ImageList';
 import { useNavigate } from 'react-router-dom';
 
-const ExtractImage = ({onNext}) => {
-    const [images, setImages] = useState([
-        'resources/figures/image2_1.png',
-        'resources/figures/image2_2.png',
-        'resources/figures/image4_7.png',
-        'resources/figures/image4_8.png',
-        'resources/figures/image4_9.png',
-        'resources/figures/image4_10.png',
-        'resources/figures/image6_1.png',
-        'resources/figures/image9_1.png',
-        'resources/figures/image9_4.png',
-        'resources/figures/image9_5.png',
-    ]);
+const ExtractImage = ({onNext, extImages}) => {
+    const images = extImages.map(img => `data:image/jpeg;base64,${img}`)
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const navigate = useNavigate();
     const handleNextClick =() =>{
