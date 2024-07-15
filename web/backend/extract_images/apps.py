@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ExtractFigureConfig(AppConfig):
+class ExtractImagesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'extract_figure'
+    name = 'extract_images'
