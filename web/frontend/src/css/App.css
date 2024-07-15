@@ -58,16 +58,20 @@ header {
   margin-top: 20px;
   margin-bottom: 20px;
   gap: 8px;
-  height: 64px;
+  height: fit-content;
   align-items: center;
   justify-content: flex-start;
   display: flex;
 }
+.logo-container img{
+  width: 32px;
+}
 .logo-corning{
-  color: #a6a6a6;
+  color: var(--sub-text-color);
+  font-size: 24px !important;
 }
 .logo-charteye{
-  color: var(--main-text-color);
+  color: #2B308B;
   flex-direction: row;
   display: flex;
   align-items: center;

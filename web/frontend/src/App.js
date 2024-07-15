@@ -61,10 +61,10 @@ function App() {
   return (
       <div className="App">
           <div className='logo-container'>
-            <p className='logo-corning'>Corning</p>
+            <p className='logo-corning'>CORNING</p>
             <div className='logo-charteye'>
               <p>ChartEye</p>
-              <img src={'resources/icons/icon.svg'} alt="icon"/>
+              <img src={'resources/icons/logo.svg'} alt="icon"/>
             </div>
           </div>
         <div className='main-content'>
