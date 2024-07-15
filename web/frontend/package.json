@@ -20,7 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"npm:start\" \"python ../backend/manage.py runserver\"",
+    "dev": "concurrently --kill-others-on-fail \"npm:front\" \"npm:server\"",
+    "front": "react-scripts start",
+    "server": "python ../backend/manage.py runserver",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
