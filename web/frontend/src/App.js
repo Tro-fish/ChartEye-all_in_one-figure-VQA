@@ -17,10 +17,12 @@ import ProgressBar from './components/ProgressBar';
 
 function App() {
   const [step, setStep] = useState(1);
+  const [extImages, setExtImages] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-  const handleNextStep = () => {
+  const handleNextStep = (images) => {
     setStep((prevStep) => prevStep + 1);
+    setExtImages(images)
   };
   useEffect(()=>{
     navigate('/');
@@ -73,7 +75,7 @@ function App() {
           </div>
           <Routes>
             <Route exact path="/" element={<UploadPage onNext={handleNextStep}/>}/>
-            <Route path="/step2" element={<ExtractImage onNext={handleNextStep}/>}/>
+            <Route path="/step2" element={<ExtractImage onNext={handleNextStep} extImages={extImages}/>}/>
             <Route path ="/step3" element={<DataAnalysis/>}/>
           </Routes>
         </div>
