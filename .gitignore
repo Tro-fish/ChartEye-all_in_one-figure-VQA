@@ -1,9 +1,10 @@
 UniChart_Images/
 corning/
-*/lightning_logs/
-*/__pycache__/
+lightning_logs/
+__pycache__/
 dataset/scicap_data/dataset
 dataset/scientific_figures_captions/dataset
+extracted_images/
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

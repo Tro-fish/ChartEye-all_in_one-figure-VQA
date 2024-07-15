@@ -11,27 +11,28 @@ function FileUpload ({onFilesAdded}) {
         'resources/icons/file.svg'
       ];
     const onDrop = useCallback((acceptedFiles) => {
+        console.log(acceptedFiles)
         
-            const updatedFiles = acceptedFiles.map(file => ({
-                ...file,
-                preview: URL.createObjectURL(file),
-                icon: file.name.endsWith('.pdf') ? 0 :
-                    file.name.endsWith('.ppt') || file.name.endsWith('.pptx') ? 1 :
-                    file.name.endsWith('.doc') || file.name.endsWith('.docx') ? 2:
-                    3,
-                loading: true
-            }));
-            
-            setFiles(prevFiles => [...prevFiles, ...updatedFiles]); 
-            onFilesAdded(updatedFiles);
-            
+        const updatedFiles = acceptedFiles.map(file => ({
+            ...file,
+            file: file,
+            preview: URL.createObjectURL(file),
+            icon: file.name.toLowerCase().endsWith('.pdf') ? 0 :
+                file.name.toLowerCase().endsWith('.ppt') || file.name.toLowerCase().endsWith('.pptx') ? 1 :
+                file.name.toLowerCase().endsWith('.doc') || file.name.toLowerCase().endsWith('.docx') ? 2:
+                3,
+            loading: true,
+        }));
 
-            setTimeout(()=>{
-                setFiles(prevFiles => prevFiles.map(file=>({
-                    ...file,
-                    loading: false
-                })));
-            },1000);
+        setFiles(prevFiles => [...prevFiles, ...updatedFiles]); 
+        onFilesAdded(updatedFiles);
+
+        setTimeout(()=>{
+            setFiles(prevFiles => prevFiles.map(file=>({
+                ...file,
+                loading: false
+            })));
+        },1000);
     },[onFilesAdded]);
 
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
