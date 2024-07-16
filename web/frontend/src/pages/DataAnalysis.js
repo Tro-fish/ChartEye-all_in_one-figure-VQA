@@ -14,7 +14,7 @@ const DataAnalysis = () => {
   const onImage = async (image) => {
     setSelectedImage(image)
     setSelectedCaption('Loading Caption...')
-    const img = selectedImage.replace('data:image/jpeg;base64,', '')
+    const img = image.replace('data:image/png;base64,', '')
 
     await fetch('http://127.0.0.1:8000/caption/', {
         method: 'POST',
@@ -22,11 +22,14 @@ const DataAnalysis = () => {
     })
     .then(response => response.json())
     .then(data => {
-      const caption = data.caption
-      setSelectedCaption(caption)
+      if (1 === 1) { // 현재 요청에 대한 응답인지 확인
+        const caption = data.caption
+        setSelectedCaption(caption)
+      }
     })
     .catch(error => {
-        console.error('Error fetching images:', error)
+        setSelectedCaption("Can't load caption.")
+        console.error('Error loading caption:', error)
     })
   }
 
@@ -46,7 +49,7 @@ const DataAnalysis = () => {
         <div className='chat-title'>
           ChartEye AI
         </div>
-        <Chat/>
+        <Chat image={selectedImage} caption={selectedCaption}/>
       </div>
     </div>
   </div>

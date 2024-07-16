@@ -1,5 +1,6 @@
 from transformers import AutoProcessor, PaliGemmaForConditionalGeneration
 from PIL import Image
+import re
 import io
 import torch
 import base64
@@ -20,6 +21,18 @@ model = PaliGemmaForConditionalGeneration.from_pretrained(
 
 processor = AutoProcessor.from_pretrained(model_id)
 
+def post_process(text):
+    # Fixing spaces before punctuations
+    text = re.sub(r'\s+([.,!?()])', r'\1', text)
+    text = re.sub(r'([(])\s+', r'\1', text)
+    
+    # Capitalizing the first letter of the sentence and 'I' pronouns
+    sentences = re.split('(?<=[.!?]) +', text)
+    sentences = [s.capitalize() for s in sentences]
+    processed_text = ' '.join(sentences)
+    
+    return processed_text
+
 # Instruct the model to create a caption in Spanish
 def captioning(img_str):
     global device, model, processor
@@ -38,5 +51,5 @@ def captioning(img_str):
         decoded = processor.decode(generation, skip_special_tokens=True)
     print('End Captioning...')
     
-    return decoded
+    return post_process(decoded)
 

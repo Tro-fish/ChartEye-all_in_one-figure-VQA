@@ -3,11 +3,11 @@ import ImageList from '../components/ImageList';
 import { useNavigate } from 'react-router-dom';
 
 const ExtractImage = ({onNext, extImages}) => {
-    const images = extImages.map(img => `data:image/jpeg;base64,${img}`)
+    const images = extImages.map(img => `data:image/png;base64,${img}`)
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const navigate = useNavigate();
     const handleNextClick = async () => {
-        const img = selectedImage.replace('data:image/jpeg;base64,', '')
+        const img = selectedImage.replace('data:image/png;base64,', '')
 
         // captioning
         await fetch('http://127.0.0.1:8000/caption/', {
