@@ -3,9 +3,10 @@ import torch.nn as nn
 from torchvision import transforms
 from efficientnet_pytorch import EfficientNet
 from tqdm import tqdm
+from django.conf import settings
 
 # device
-device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.has_mps else 'cpu')
+device = settings.DEVICE
 
 # model
 num_classes = 3 
