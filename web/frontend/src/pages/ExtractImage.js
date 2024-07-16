@@ -6,8 +6,23 @@ const ExtractImage = ({onNext, extImages}) => {
     const images = extImages.map(img => `data:image/jpeg;base64,${img}`)
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const navigate = useNavigate();
-    const handleNextClick =() =>{
-        navigate('/step3', {state: {selectedImage, images}});
+    const handleNextClick = async () => {
+        const img = selectedImage.replace('data:image/jpeg;base64,', '')
+
+        // captioning
+        await fetch('http://127.0.0.1:8000/caption/', {
+            method: 'POST',
+            body: img
+        })
+        .then(response => response.json())
+        .then(data => {
+            const caption = data.caption
+            console.log(caption)
+            navigate('/step3', {state: {selectedImage, images, caption}});
+        })
+        .catch(error => {
+            console.error('Error fetching images:', error)
+        })
     };
     
 
