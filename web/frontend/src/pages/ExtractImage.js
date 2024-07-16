@@ -17,7 +17,6 @@ const ExtractImage = ({onNext, extImages}) => {
         .then(response => response.json())
         .then(data => {
             const caption = data.caption
-            console.log(caption)
             navigate('/step3', {state: {selectedImage, images, caption}});
         })
         .catch(error => {
