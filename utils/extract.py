@@ -14,20 +14,36 @@ from PIL import Image
 from pdf2docx import Converter
 from paddleocr import PaddleOCR
 
+########################## Preprocess ##########################
+
 def is_single_color(image):
-    min_val, max_val = image.min(), image.max()
+    image_array = np.array(image)
+    min_val, max_val = image_array.min(), image_array.max()
     return max_val - min_val < 10
 
 def is_extreme_aspect_ratio(idx, image, threshold=4):
-    height, width, _ = image.shape
+    width, height = image.size
     aspect_ratio = max(height / width, width / height)
     print(f"idx{idx}: aspect_ratio: {aspect_ratio}")
     return aspect_ratio > threshold
 
 def count_unique_colors(idx, image):
-    unique_colors = set(tuple(pixel) for row in image for pixel in row)
+    image_array = np.array(image)
+    unique_colors = set(tuple(pixel) for row in image_array for pixel in row)
     print(f"idx{idx}: unique colors: {len(unique_colors)}")
     return len(unique_colors)
+
+def add_white_background(image):
+    if image.mode == 'RGBA':
+        # 알파 채널을 처리하여 흰색 배경으로 변환
+        background = Image.new('RGBA', image.size, (255, 255, 255, 255))
+        background.paste(image, (0, 0), image)
+        return background.convert('RGB')  # 최종적으로 RGB로 변환
+    else:
+        return image.convert('RGB')  # RGBA가 아닌 경우 그냥 RGB로 변환
+
+
+########################## Extract Images from PPTX, DOCX, PDF ##########################
 
 def extract_images_from_pptx(pptx_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
@@ -42,87 +58,58 @@ def extract_images_from_pptx(pptx_path, output_folder):
     for picture in iter_picture_shapes(prs):
         image = picture.image
         image_bytes = image.blob
-        output_image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
+        output_image = Image.open(io.BytesIO(image_bytes))
 
-        if (not is_single_color(output_image)) and (not is_extreme_aspect_ratio(i, output_image)) and (count_unique_colors(i, output_image) > 50):
-            cv2.imwrite(os.path.join(output_folder, f'{i}.jpg'), output_image)
+        if (not is_single_color(output_image)) and (not is_extreme_aspect_ratio(i, output_image)) and (count_unique_colors(i, output_image) > 50): 
+            # 투명 배경을 흰색 배경으로 변환
+            image = add_white_background(output_image)
+
+            # 이미지 파일을 저장
+            output_path = os.path.join(output_folder, f'image{i}.jpg')
+            image.save(output_path)
+            
+            print(f"Saved image{i}.jpg at {output_path}")
             i += 1
 
+
 def extract_images_from_docx(docx_path, output_folder):
-    os.makedirs(output_folder, exist_ok=True)
+
     doc = Document(docx_path)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+    
     i = 0
+    # DOCX 문서의 모든 관계(rels)를 순회 처리
     for rel in doc.part.rels.values():
         if "image" in rel.reltype:
-            image = rel.target_part.blob
-            image_array = np.frombuffer(image, np.uint8)
-            image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
-
+            # 이미지 데이터를 바이트 배열('blob')로 가져옴 
+            image_data = rel.target_part.blob
+            # 바이트 배열을 Pillow 이미지로 변환
+            image = Image.open(io.BytesIO(image_data))
             if is_extreme_aspect_ratio(i, image):
-                print(f"Skipped image{i}.jpg 비율 스킵")
                 continue
-            # if count_unique_colors(i, image) < 50:
-            #     print(f"image{i}.jpg 컬러 스킵")
-            #     continue
-            image_path = os.path.join(output_folder, f'image{i}.jpg')
-            with open(image_path, 'wb') as f:
-                f.write(cv2.imencode('.jpg', image)[1].tobytes())
-                print(f"Saved {image_path}")
+
+            # 투명 배경을 흰색 배경으로 변환
+            image = add_white_background(image)
+
+            # 이미지 파일을 저장
+            output_path = os.path.join(output_folder, f'image{i}.jpg')
+            image.save(output_path)
+            
+            print(f"Saved image{i}.jpg at {output_path}")
             i += 1
 
 #version 1
-# def extract_images_from_pdf(pdf_path, output_folder):
-#     # 메모리 내에서 PDF를 DOCX로 변환
-#     pdf_to_docx = io.BytesIO()
-#     cv = Converter(pdf_path)
-#     cv.convert(pdf_to_docx, start=0, end=None)
-#     cv.close()
-#     pdf_to_docx.seek(0)  # 메모리 파일의 시작점으로 이동 즉, pdf => word => image로 변환하는 거임 
-#     extract_images_from_docx(pdf_to_docx, output_folder)
-
-#version 2
 def extract_images_from_pdf(pdf_path, output_folder):
-    min_width = 0
-    min_height = 0
-    # Create the output directory if it does not exist
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+    # 메모리 내에서 PDF를 DOCX로 변환
+    pdf_to_docx = io.BytesIO()
+    cv = Converter(pdf_path)
+    cv.convert(pdf_to_docx, start=0, end=None)
+    cv.close()
+    pdf_to_docx.seek(0)  # 메모리 파일의 시작점으로 이동 즉, pdf => word => image로 변환하는 거임 
+    extract_images_from_docx(pdf_to_docx, output_folder)
 
-    # file path you want to extract images from
-    file = pdf_path
-    # open the file
-    pdf_file = fitz.open(file)
-
-    # Iterate over PDF pages
-    for page_index in range(len(pdf_file)):
-        # Get the page itself
-        page = pdf_file[page_index]
-        # Get image list
-        image_list = page.get_images(full=True)
-        # Print the number of images found on this page
-        if image_list:
-            print(f"[+] Found a total of {len(image_list)} images in page {page_index}")
-        else:
-            print(f"[!] No images found on page {page_index}")
-        # Iterate over the images on the page
-        for image_index, img in enumerate(image_list, start=1):
-            # Get the XREF of the image
-            xref = img[0]
-            # Extract the image bytes
-            base_image = pdf_file.extract_image(xref)
-            image_bytes = base_image["image"]
-            # Get the image extension
-            image_ext = base_image["ext"]
-            # Load it to PIL
-            image = Image.open(io.BytesIO(image_bytes))
-            # Check if the image meets the minimum dimensions and save it
-            if image.width >= min_width and image.height >= min_height:
-                image.save(
-                    open(os.path.join(output_folder, f"image{page_index + 1}_{image_index}.png"), "wb"),
-                    format='PNG')
-            else:
-                print(f"[-] Skipping image {image_index} on page {page_index} due to its small size.")
-
+########################## Extract text from image ##########################
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 def extract_images_from_text(figure_path):
@@ -135,5 +122,3 @@ def extract_images_from_text(figure_path):
             text_result.append(word[1][0])
     text_result = '\n'.join(text_result)
     return text_result
-
-print(extract_images_from_text("/Users/hwany/AI-corning/sample_data/2008_images/image0.jpg"))
