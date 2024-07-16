@@ -82,33 +82,20 @@ def extract_images_from_pdf(file):
     min_width = 0
     min_height = 0
 
-    # open the PDF from the file-like object
     pdf_file = fitz.open(stream=file, filetype="pdf")
 
     output_images = []
-    # Iterate over PDF pages
     for page_index in range(len(pdf_file)):
-        # Get the page itself
         page = pdf_file[page_index]
-        # Get image list
         image_list = page.get_images(full=True)
-        # Print the number of images found on this page
-        if image_list:
-            print(f"[+] Found a total of {len(image_list)} images in page {page_index}")
-        else:
-            print(f"[!] No images found on page {page_index}")
-        # Iterate over the images on the page
+
         for image_index, img in enumerate(image_list, start=1):
-            # Get the XREF of the image
             xref = img[0]
-            # Extract the image bytes
             base_image = pdf_file.extract_image(xref)
             image_bytes = base_image["image"]
-            # Get the image extension
             image_ext = base_image["ext"]
-            # Load it to PIL
             image = Image.open(io.BytesIO(image_bytes))
-            # Check if the image meets the minimum dimensions and save it
+
             if image.width >= min_width and image.height >= min_height:
                 output_images.append(image)
             else:
