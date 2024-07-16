@@ -9,7 +9,7 @@ const ImageList = ({ images, selectedImage, onSelectImage }) => {
           src={image}
           alt={`Thumbnail ${index}`}
           className={`thumbnail ${selectedImage === image ? 'selected' : ''}`}
-          onClick={() => onSelectImage(image)}
+          onClick={() => {onSelectImage(image)}}
         />
       ))}
     </div>

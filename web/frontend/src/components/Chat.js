@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChatSystem = () => {
+const ChatSystem = ({image, caption}) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 
@@ -28,9 +28,30 @@ const ChatSystem = () => {
     fetchAIResponse(inputText);
   };
 
-  const fetchAIResponse = (text) => {
-    const aiResponse = { text: "AI's response: " + text, sender: 'ai' };
-    setMessages(messages => [...messages, aiResponse]);
+  const fetchAIResponse = async (text) => {
+    await fetch('http://127.0.0.1:8000/chat/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'image': image,
+        'text': text,
+        'caption': caption
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      const answer = data.answer
+      const aiResponse = { text: answer, sender: 'ai' };
+      setMessages(messages => [...messages, aiResponse]);
+    })
+    .catch(error => {
+      const answer = "Can't get answer."
+      const aiResponse = { text: answer, sender: 'ai' };
+      setMessages(messages => [...messages, aiResponse]);
+      console.error('Error getting answer:', error)
+    })
   };
 
   return (
