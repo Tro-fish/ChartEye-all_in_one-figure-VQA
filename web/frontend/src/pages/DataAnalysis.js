@@ -7,11 +7,9 @@ import Chat from '../components/Chat';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-const DataAnalysis = () => {
+const DataAnalysis = ({images, initialImage, initialCaption}) => {
   const location = useLocation();
-  const images = location.state?.images;
-  const initialImage = location.state?.selectedImage;
-  const [selectedCaption, setSelectedCaption] = useState(location.state?.caption)
+  const [selectedCaption, setSelectedCaption] = useState(initialCaption)
   const [selectedImage, setSelectedImage] = useState(initialImage);
   const [loading, setLoading] = useState(false);
 
