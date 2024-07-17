@@ -2,10 +2,11 @@ UniChart_Images/
 corning/
 lightning_logs/
 __pycache__/
+
+# dataset
 dataset/scicap_data/dataset
 dataset/scientific_figures_captions/dataset
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+dataset/eval/
 
 # dependencies
 node_modules/

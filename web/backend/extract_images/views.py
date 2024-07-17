@@ -1,6 +1,6 @@
 import io
 import base64
-from .extract import extract_images_from_pdf, extract_images_from_pptx, extract_images_from_docx
+from .extract import extract_images_from_pdf1, extract_images_from_pptx, extract_images_from_docx
 from .classify import classify_chart_images
 from django.http import JsonResponse
 from tqdm import tqdm
@@ -13,7 +13,7 @@ def extract(request):
         extracted_images = []
         for file in tqdm(files.values(), desc='Extracting...', total=len(files)):
             if file.name.lower().endswith('.pdf'):
-                images = extract_images_from_pdf(file.read())
+                images = extract_images_from_pdf1(file.read())
             elif file.name.lower().endswith('.ppt') or file.name.lower().endswith('.pptx'):
                 images = extract_images_from_pptx(file.read())
             elif file.name.lower().endswith('.doc') or file.name.lower().endswith('.docx'):

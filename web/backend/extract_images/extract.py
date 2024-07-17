@@ -1,13 +1,11 @@
-import cv2
 import numpy as np
 import os
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 import io
-import os
-import io
 import cv2
 import numpy as np
+import tempfile
 from docx import Document
 import fitz  # PyMuPDF
 from PIL import Image, ImageDraw
@@ -119,117 +117,100 @@ class CorningCustomExtractor:
     # svg 윤곽선을 감지하여 각 이미지의 외부 및 내부 경계 분석 
     # 각 페이지 => 흑백 이미지로 변환후 이진화를 통해 경계를 찾아냄
     # 그후 클립하여 저장 
-    def detect_svg_contours(self, page_num, output_dir, min_svg_gap_dx: float, min_svg_gap_dy: float, min_w: float, min_h: float):
+    def detect_svg_contours(self, page_num, min_svg_gap_dx: float, min_svg_gap_dy: float):
         
         pixmap = self.clip_page_to_pixmap(zoom=1.0)
         src = self._pixmap_to_cv_image(pixmap)
-        gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
-        _, binary = cv.threshold(gray, 253, 255, cv.THRESH_BINARY_INV)
+        gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
+        _, binary = cv2.threshold(gray, 253, 255, cv2.THRESH_BINARY_INV)
         external_bboxes = find_section_borders(binary, min_dx=min_svg_gap_dx, min_dy=min_svg_gap_dy)
 
-        # 화면 디버깅용 코드 => 화면에 경계를 표시해서 보여줌 
-        # Convert to Pillow image for visualization
-        # pil_image = Image.fromarray(cv.cvtColor(src, cv.COLOR_BGR2RGB))
-        # draw = ImageDraw.Draw(pil_image)
-        # for bbox in external_bboxes:
-        #     x0, y0, x1, y1 = bbox
-        #     draw.rectangle([x0, y0, x1, y1], outline="red", width=2)
-        # pil_image.show()
-
-        # 클립된 영역 이미지 저장 
-        os.makedirs(output_dir, exist_ok=True)
+        results = []
         for i, bbox in enumerate(external_bboxes):
             pixmap = self.clip_page_to_pixmap(bbox=bbox, zoom=3.0)
             image = Image.open(io.BytesIO(pixmap.tobytes()))
             if count_unique_colors(i, image) > 300:
-                image.save(f"{output_dir}/{page_num}_{i}.png")
+                results.append(image)
+        
+        return results
 
     @staticmethod
     def _pixmap_to_cv_image(pixmap: fitz.Pixmap):
-        import cv2 as cv
-        import numpy as np
         img_byte = pixmap.tobytes()
-        return cv.imdecode(np.frombuffer(img_byte, np.uint8), cv.IMREAD_COLOR)
-
+        return cv2.imdecode(np.frombuffer(img_byte, np.uint8), cv2.IMREAD_COLOR)
 
 
 ########################## 3.Extract Images from PPTX, DOCX, PDF ##########################
 
-def extract_images_from_pptx(pptx_path, output_folder):
-    os.makedirs(output_folder, exist_ok=True)
-
+def extract_images_from_pptx(pptx_bytes):
     def iter_picture_shapes(prs):
         for slide in prs.slides:
             for shape in slide.shapes:
                 if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
                     yield shape
-    prs = Presentation(pptx_path)
-    i = 0
+    prs = Presentation(io.BytesIO(pptx_bytes))
+    
+    output_images = []
     for picture in iter_picture_shapes(prs):
-        image = picture.image
-        image_bytes = image.blob
-        output_image = Image.open(io.BytesIO(image_bytes))
+        image = picture.image.blob
+        image = Image.open(io.BytesIO(image))
+        output_images.append(image)
+    
+    return output_images
 
-        if (not is_single_color(output_image)) and (not is_extreme_aspect_ratio(i, output_image)) and (count_unique_colors(i, output_image) > 50): 
-            # 투명 배경을 흰색 배경으로 변환
-            image = add_white_background(output_image)
-
-            # 이미지 파일을 저장
-            output_path = os.path.join(output_folder, f'image{i}.jpg')
-            image.save(output_path)
-            
-            print(f"Saved image{i}.jpg at {output_path}")
-            i += 1
-
-
-def extract_images_from_docx(docx_path, output_folder):
-
-    doc = Document(docx_path)
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+def extract_images_from_docx(docx_bytes):
+    doc = Document(io.BytesIO(docx_bytes))
     
     i = 0
-    # DOCX 문서의 모든 관계(rels)를 순회 처리
+    output_images = []
     for rel in doc.part.rels.values():
         if "image" in rel.reltype:
-            # 이미지 데이터를 바이트 배열('blob')로 가져옴 
-            image_data = rel.target_part.blob
-            # 바이트 배열을 Pillow 이미지로 변환
-            image = Image.open(io.BytesIO(image_data))
+            image = rel.target_part.blob
+            image = Image.open(io.BytesIO(image))
+
             if is_extreme_aspect_ratio(i, image):
                 continue
+                
+            # if count_unique_colors(i, image) < 50:
+            #     print(f"image{i}.jpg 컬러 스킵")
+            #     continue
 
-            # 투명 배경을 흰색 배경으로 변환
             image = add_white_background(image)
+            output_images.append(image)
 
-            # 이미지 파일을 저장
-            output_path = os.path.join(output_folder, f'image{i}.jpg')
-            image.save(output_path)
-            
-            print(f"Saved image{i}.jpg at {output_path}")
-            i += 1
+    return output_images
 
 #version 1 => 시연용 속도 빠름
-def extract_images_from_pdf1(pdf_path, output_folder):
-    # 메모리 내에서 PDF를 DOCX로 변환
-    pdf_to_docx = io.BytesIO()
-    cv = Converter(pdf_path)
-    cv.convert(pdf_to_docx, start=0, end=None)
-    cv.close()
-    pdf_to_docx.seek(0)  # 메모리 파일의 시작점으로 이동 즉, pdf => word => image로 변환하는 거임 
-    extract_images_from_docx(pdf_to_docx, output_folder)
+def extract_images_from_pdf1(pdf_bytes):
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temp_pdf:
+        temp_pdf.write(pdf_bytes)
+        temp_pdf_path = temp_pdf.name
+
+    try:
+        pdf_to_docx = io.BytesIO()
+        cv = Converter(temp_pdf_path)
+        cv.convert(pdf_to_docx, start=0, end=None)
+        cv.close()
+        pdf_to_docx.seek(0)
+        return extract_images_from_docx(pdf_to_docx.getvalue())
+    finally:
+        os.remove(temp_pdf_path)
 
 #version2 => 제출용, 완벽히 뽑으나 조금 느리고 텍스트도 조금 뽑힘, 직사각형 모양으로 pixel단위를 찾는것임 
 
-def extract_images_from_pdf2(pdf_path, output_folder):
-    doc = fitz.open(pdf_path)
+def extract_images_from_pdf2(pdf_bytes):
+    pdf_file = fitz.open(stream=pdf_bytes, filetype="pdf")
     
-        # PDF 전체 페이지에서 이미지 추출
-    for page_number in range(doc.page_count):
-        page = doc.load_page(page_number)
+    output_images = []
+    # PDF 전체 페이지에서 이미지 추출
+    for page_number in range(pdf_file.page_count):
+        page = pdf_file.load_page(page_number)
         extractor = CorningCustomExtractor(page)
-        print(f"Extracting images from page {page_number + 1}...")
-        extractor.detect_svg_contours(page_number+1, output_dir=output_folder, min_svg_gap_dx=10.0, min_svg_gap_dy=10.0, min_w=2.0, min_h=2.0)
+        # print(f"Extracting images from page {page_number + 1}...")
+        images = extractor.detect_svg_contours(page_number+1, min_svg_gap_dx=10.0, min_svg_gap_dy=10.0)
+        output_images.extend(images)
+    
+    return output_images
         
 ########################## Extract text from image ##########################
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
