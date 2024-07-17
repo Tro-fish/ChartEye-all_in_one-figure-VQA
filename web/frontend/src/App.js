@@ -6,6 +6,7 @@ import './css/extractimg.css';
 import './css/dataanalysis.css';
 import './css/chat.css';
 
+
 import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes, useNavigate, useLocation} from 'react-router-dom';
 
@@ -18,12 +19,27 @@ import ProgressBar from './components/ProgressBar';
 function App() {
   const [step, setStep] = useState(1);
   const [extImages, setExtImages] = useState([]);
+  const [initialImage, setInitialImage] = useState('');
+  const [initialCaption, setInitialCaption] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
-  const handleNextStep = (images) => {
+
+  const handleNextStep = () => {
     setStep((prevStep) => prevStep + 1);
-    setExtImages(images)
+  }
+
+  const handleNextUpload = (images) => {
+    const ext = images.map(img => `data:image/png;base64,${img}`)
+    setExtImages(ext)
+    handleNextStep()
   };
+
+  const handleNextExtract = (image, caption) => {
+    setInitialImage(image)
+    setInitialCaption(caption)
+    handleNextStep()
+  }
+
   useEffect(()=>{
     navigate('/');
   },[]);
@@ -74,9 +90,9 @@ function App() {
             <ProgressBar step={step}/>
           </div>
           <Routes>
-            <Route exact path="/" element={<UploadPage onNext={handleNextStep}/>}/>
-            <Route path="/step2" element={<ExtractImage onNext={handleNextStep} extImages={extImages}/>}/>
-            <Route path ="/step3" element={<DataAnalysis/>}/>
+            <Route exact path="/" element={<UploadPage onNext={handleNextUpload}/>}/>
+            <Route path="/step2" element={<ExtractImage onNext={handleNextExtract} images={extImages}/>}/>
+            <Route path ="/step3" element={<DataAnalysis images={extImages} initialImage={initialImage} initialCaption={initialCaption}/>}/>
           </Routes>
         </div>
       </div>

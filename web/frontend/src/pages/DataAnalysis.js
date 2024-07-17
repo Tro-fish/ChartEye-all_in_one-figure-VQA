@@ -4,16 +4,20 @@ import ImageList from '../components/ImageList';
 import { useLocation } from 'react-router-dom';
 import Chat from '../components/Chat';
 
-const DataAnalysis = () => {
+import CircularProgress from '@mui/material/CircularProgress';
+
+
+const DataAnalysis = ({images, initialImage, initialCaption}) => {
   const location = useLocation();
-  const images = location.state?.images;
-  const initialImage = location.state?.selectedImage;
-  const [selectedCaption, setSelectedCaption] = useState(location.state?.caption)
+  const [selectedCaption, setSelectedCaption] = useState(initialCaption)
   const [selectedImage, setSelectedImage] = useState(initialImage);
+  const [loading, setLoading] = useState(false);
 
   const onImage = async (image) => {
     setSelectedImage(image)
-    setSelectedCaption('Loading Caption...')
+    setSelectedCaption('Loading Caption...');
+    setLoading(true);
+
     const img = image.replace('data:image/png;base64,', '')
 
     await fetch('http://127.0.0.1:8000/caption/', {
@@ -31,24 +35,40 @@ const DataAnalysis = () => {
         setSelectedCaption("Can't load caption.")
         console.error('Error loading caption:', error)
     })
+    .finally(() => {
+      setLoading(false);
+    });
   }
 
   return (
     <div className="data-analysis-container">
-    {images && <ImageList images={images} selectedImage={selectedImage} onSelectImage={onImage} />}
+      <div className='analysis-image-list-container'>
+      {images && <ImageList images={images} selectedImage={selectedImage} onSelectImage={onImage} />}
+      </div>
     <div className="analysis-content-container">
       <div className="image-display-container">
+        <h4 className='chat-title'>
+          Figure
+        </h4>
         {selectedImage && (
           <>
-            <img src={selectedImage} alt="Selected" className="selected-large-image" />
-            <div className="image-description">{selectedCaption}</div>
+            {loading ? (
+                <CircularProgress/>) : (
+                <img src={selectedImage} alt="Selected" className="selected-large-image" />
+              )}
+            <div className="image-description">
+              <p style={{ alignSelf: 'flex-start', color: 'var(--sub-text-color)', margin: '0' }}>추출된 캡션 데이터</p>
+            {loading ? (
+                <>...</>) : (
+                <>{selectedCaption}</>
+              )}</div>
           </>
         )}
       </div>
       <div className="chat-system-container">
-        <div className='chat-title'>
+        <h4 className='chat-title'>
           ChartEye AI
-        </div>
+        </h4>
         <Chat image={selectedImage} caption={selectedCaption}/>
       </div>
     </div>
