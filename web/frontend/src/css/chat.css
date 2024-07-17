@@ -50,7 +50,7 @@
 
   .message {
     margin-bottom: 16px;
-    max-width: 80%;
+    max-width: 70%;
   }
   
   .message.user {
@@ -64,7 +64,7 @@
   .message.ai {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
+    gap: 8px;
   }
   .message.ai .message-text{
     align-self: flex-start;
