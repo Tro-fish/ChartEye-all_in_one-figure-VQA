@@ -11,15 +11,15 @@ device = "cuda:1"
 prompt = "caption en\n"
 dtype = torch.bfloat16
 image_path_prefix = "/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/images/"
-checkpoint_path = '/home/wani/Desktop/Corning_team3/models/PaliGemma/train/checkpoints/'
+
 with open ("/home/wani/Desktop/Corning_team3/dataset/scicap_data/dataset/val/final_validation_v2.json", 'r') as f:
     validation_data = json.load(f)
 
-# 모델을 체크포인트에서 불러옴
 model = PaliGemmaForConditionalGeneration.from_pretrained(
-    checkpoint_path,
+    model_id,
     torch_dtype=dtype,
     device_map=device,
+    revision="bfloat16",
 ).eval()
 
 processor = AutoProcessor.from_pretrained(model_id)
