@@ -91,7 +91,7 @@ header {
   align-items: stretch;
 }
 .main-content-container{
-  margin-top: 4vh;
+  margin-top: 8vh;
   width: 80%;
   height: fit-content;
   display: flex;
@@ -124,50 +124,3 @@ header {
 
 }
 
-
-/* styles.css */
-.loading-container{
-  width: 80%;
-  height: 280px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin-bottom: 40px;
-  border-radius: 24px;  /* 이미지의 테두리 반경 */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-
-}
-.loading-container h3{
-  margin: 0;
-}
-.loading-container p.sub-text{
-  margin-bottom: 20px;
-  color: #696E82;
-}
-.loading-container p.percentage-text{
-  margin-top: 12px;
-  margin-bottom: 4px;
-  color: var(--main-color);
-}
-.loading-bar-container {
-  background-color: var(--unactive-text-color);
-  width: 80%; 
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.loading-bar {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(to right,var(--sub-color),var(--main-color));
-  border-radius: 4px;
-}
-
-@keyframes loadProgress {
-  from { width: 0; }
-  to { width: 100%; }
-}

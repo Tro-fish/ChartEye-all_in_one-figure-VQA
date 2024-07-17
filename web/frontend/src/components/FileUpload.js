@@ -30,7 +30,7 @@ function FileUpload ({onFilesAdded}) {
                 ...file,
                 loading: false
             })));
-        },500);
+        },1000);
     },[onFilesAdded]);
 
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
