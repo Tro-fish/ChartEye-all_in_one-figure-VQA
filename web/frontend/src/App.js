@@ -6,6 +6,7 @@ import './css/extractimg.css';
 import './css/dataanalysis.css';
 import './css/chat.css';
 
+
 import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes, useNavigate, useLocation} from 'react-router-dom';
 
