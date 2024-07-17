@@ -13,14 +13,14 @@ const ExtractImage = ({onNext, extImages}) => {
     const handleNextClick = async () => {
         setLoading(true);
         
-        /*setTimeout(() => {
-            const dummyCaption = "Temp caption";
+        setTimeout(() => {
+            const dummyCaption = "Temp caption Temp caption Temp caption Temp caption Temp caption Temp caption";
             navigate('/step3', { state: { selectedImage, images, caption: dummyCaption } });
             setLoading(false);
-        }, 5000); */
+        }, 5000); 
 
         // captioning
-        const img = selectedImage.replace('data:image/png;base64,', '');
+        /*const img = selectedImage.replace('data:image/png;base64,', '');
         try {
             let response = await fetch('http://127.0.0.1:8000/caption/', {
                 method: 'POST',
@@ -36,7 +36,7 @@ const ExtractImage = ({onNext, extImages}) => {
             console.error('Error:', error);
         } finally {
             setLoading(false);
-        }
+        }*/
     };
     
 

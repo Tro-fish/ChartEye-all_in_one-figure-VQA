@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import FileUpload from '../components/FileUpload';
-import { colors } from '@mui/material';
 
 const UploadPage = ({onNext}) => {
     const [files, setFiles] = useState([]); 
@@ -10,7 +9,7 @@ const UploadPage = ({onNext}) => {
     const handleNextClick = async () =>{
         if(files.length > 0){
             setLoading(true);
-
+            /*
             const formData = new FormData()
             files.forEach((file, index) => {
                 formData.append(`file${index}`, file.file)
@@ -36,13 +35,13 @@ const UploadPage = ({onNext}) => {
             .catch(error => {
                 console.error('Error fetching images:', error);
                 setLoading(false);
-            });
-            /*
+            });*/
+            
             setTimeout(() => {
                 const dummyImages = ["/resources/figures/image2_1.png","/resources/figures/image2_2.png"];
                 onNext(dummyImages);
                 setLoading(false);
-            }, 3000); */
+            }, 3000); 
         }
     };
 
