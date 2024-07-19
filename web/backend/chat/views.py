@@ -37,7 +37,7 @@ def get_answer(figure_path, user_prompt, caption="", ocr_text=""):
 
     response = client.chat.completions.create(
             model="gpt-4o",
-            temperature=0.0,
+            temperature=0.7,
             messages= [
             {
                 "role": "user", "content": [
