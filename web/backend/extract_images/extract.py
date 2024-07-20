@@ -149,16 +149,8 @@ def extract_images_from_pptx(pptx_bytes):
         pdf_stream = io.BytesIO()
         presentation.save(pdf_stream, slides.export.SaveFormat.PDF)
         pdf_stream.seek(0)  # Rewind the stream to the beginning
-        output_images = extract_images_from_pdf2(pdf_stream.getvalue())
+        output_images = extract_images_from_pdf(pdf_stream.getvalue())
 
-    return output_images
-    
-    output_images = []
-    for picture in iter_picture_shapes(prs):
-        image = picture.image.blob
-        image = Image.open(io.BytesIO(image))
-        output_images.append(image)
-    
     return output_images
 
 def extract_images_from_docx(docx_bytes):
@@ -183,25 +175,7 @@ def extract_images_from_docx(docx_bytes):
 
     return output_images
 
-#version 1 => 시연용 속도 빠름
-def extract_images_from_pdf1(pdf_bytes):
-    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temp_pdf:
-        temp_pdf.write(pdf_bytes)
-        temp_pdf_path = temp_pdf.name
-
-    try:
-        pdf_to_docx = io.BytesIO()
-        cv = Converter(temp_pdf_path)
-        cv.convert(pdf_to_docx, start=0, end=None)
-        cv.close()
-        pdf_to_docx.seek(0)
-        return extract_images_from_docx(pdf_to_docx.getvalue())
-    finally:
-        os.remove(temp_pdf_path)
-
-#version2 => 제출용, 완벽히 뽑으나 조금 느리고 텍스트도 조금 뽑힘, 직사각형 모양으로 pixel단위를 찾는것임 
-
-def extract_images_from_pdf2(pdf_bytes):
+def extract_images_from_pdf(pdf_bytes):
     pdf_file = fitz.open(stream=pdf_bytes, filetype="pdf")
     
     output_images = []
@@ -209,13 +183,12 @@ def extract_images_from_pdf2(pdf_bytes):
     for page_number in range(pdf_file.page_count):
         page = pdf_file.load_page(page_number)
         extractor = CorningCustomExtractor(page)
-        # print(f"Extracting images from page {page_number + 1}...")
         images = extractor.detect_svg_contours(page_number+1, min_svg_gap_dx=10.0, min_svg_gap_dy=10.0)
         output_images.extend(images)
     
     return output_images
         
-########################## Extract text from image ##########################
+########################## Extract value from image ##########################
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 def extract_images_from_text(figure_path):

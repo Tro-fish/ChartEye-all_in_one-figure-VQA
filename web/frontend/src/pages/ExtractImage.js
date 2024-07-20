@@ -46,7 +46,6 @@ const ExtractImage = ({onNext, images}) => {
                     <div className='loading-container'>
                         <h3>데이터 처리 중입니다.</h3>
                         <p className='sub-text'>캡션 모델링 중...</p>
-                        {/* <p className='percentage-text'>{fetching}%</p> */}
                         <div className="loading-bar-container">
                             <div className="loading-bar-caption"></div>
                         </div>

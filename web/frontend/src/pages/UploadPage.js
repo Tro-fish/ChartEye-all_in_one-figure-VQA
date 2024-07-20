@@ -52,7 +52,6 @@ const UploadPage = ({onNext}) => {
                 <div className='loading-container'>
                     <h3>데이터 처리 중입니다.</h3>
                     <p className='sub-text'>Figure 이미지 추출 중 ...</p>
-                    {/* <p className='percentage-text'>({fetching} / 100%)</p> */}
                 <div className="loading-bar-container">
                     
                     <div className="loading-bar-extract"></div>
