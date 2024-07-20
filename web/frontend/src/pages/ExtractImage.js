@@ -6,17 +6,11 @@ const ExtractImage = ({onNext, images}) => {
     const [selectedImage, setSelectedImage] = useState(images[0]);
 
     const [loading, setLoading] = useState(false);
-    const [fetching, setFetching] = useState(0); 
+    const [fetching, setFetching] = useState(0);
 
     const navigate = useNavigate();
     const handleNextClick = async () => {
         setLoading(true);
-        
-        // setTimeout(() => {
-        //     const dummyCaption = "Temp caption Temp caption Temp caption Temp caption Temp caption Temp caption";
-        //     navigate('/step3', { state: { selectedImage, images, caption: dummyCaption } });
-        //     setLoading(false);
-        // }, 5000); 
 
         // captioning
         const img = selectedImage.replace('data:image/png;base64,', '');
@@ -52,9 +46,9 @@ const ExtractImage = ({onNext, images}) => {
                     <div className='loading-container'>
                         <h3>데이터 처리 중입니다.</h3>
                         <p className='sub-text'>캡션 모델링 중...</p>
-                        <p className='percentage-text'>{fetching}%</p>
+                        {/* <p className='percentage-text'>{fetching}%</p> */}
                         <div className="loading-bar-container">
-                            <div className="loading-bar" style={{ width: `${fetching}%` }}></div>
+                            <div className="loading-bar-caption"></div>
                         </div>
                     </div>
                 ) : (

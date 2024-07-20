@@ -1,4 +1,3 @@
-import nltk
 import json
 import numpy as np
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
@@ -9,7 +8,7 @@ from collections import defaultdict
 from pycocoevalcap.cider.cider import Cider
 
 # 평가 데이터 파일 경로 설정
-json_file_path = '/home/wani/Desktop/Corning_team3/evaluation/model_validation_results/paligemma-3b-mix-448.json'
+json_file_path = '../dataset/eval/validation.json'
 
 # BLEU4 평가 함수
 def calculate_bleu4(predictions, references):

@@ -160,11 +160,20 @@ header {
   margin-bottom: 20px;
 }
 
-.loading-bar {
+.loading-bar-extract {
   height: 100%;
   width: 0;
   background: linear-gradient(to right,var(--sub-color),var(--main-color));
   border-radius: 4px;
+  animation: loadProgress 65s ease-out forwards;
+}
+
+.loading-bar-caption {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right,var(--sub-color),var(--main-color));
+  border-radius: 4px;
+  animation: loadProgress 4s ease-out forwards;
 }
 
 @keyframes loadProgress {

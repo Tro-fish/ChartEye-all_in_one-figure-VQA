@@ -46,7 +46,7 @@
   }
   
   .chat-system-container {
-    flex: 3; 
+    flex: 2; 
   }
   .chat-title{
     align-self: flex-start;
@@ -69,5 +69,13 @@
     padding: 20px;
     gap: 20px;
     font-size: 16px;
+  }
+  .chat-title-container{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }.chat-title-container img{
+    width: 20px;
   }
   

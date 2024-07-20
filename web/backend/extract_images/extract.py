@@ -11,6 +11,7 @@ import fitz  # PyMuPDF
 from PIL import Image, ImageDraw
 from pdf2docx import Converter
 from paddleocr import PaddleOCR
+import aspose.slides as slides
 
 ########################## 1.Preprocess ##########################
 
@@ -143,12 +144,14 @@ class CorningCustomExtractor:
 ########################## 3.Extract Images from PPTX, DOCX, PDF ##########################
 
 def extract_images_from_pptx(pptx_bytes):
-    def iter_picture_shapes(prs):
-        for slide in prs.slides:
-            for shape in slide.shapes:
-                if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
-                    yield shape
-    prs = Presentation(io.BytesIO(pptx_bytes))
+    output_images = []
+    with slides.Presentation(io.BytesIO(pptx_bytes)) as presentation:
+        pdf_stream = io.BytesIO()
+        presentation.save(pdf_stream, slides.export.SaveFormat.PDF)
+        pdf_stream.seek(0)  # Rewind the stream to the beginning
+        output_images = extract_images_from_pdf2(pdf_stream.getvalue())
+
+    return output_images
     
     output_images = []
     for picture in iter_picture_shapes(prs):

@@ -12,24 +12,24 @@ const DataAnalysis = ({images, initialImage, initialCaption}) => {
   const [selectedCaption, setSelectedCaption] = useState(initialCaption)
   const [selectedImage, setSelectedImage] = useState(initialImage);
   const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState([]);
 
   const onImage = async (image) => {
     setSelectedImage(image)
     setSelectedCaption('Loading Caption...');
     setLoading(true);
+    setMessages([])
 
     const img = image.replace('data:image/png;base64,', '')
 
     await fetch('http://127.0.0.1:8000/caption/', {
-        method: 'POST',
-        body: img
+      method: 'POST',
+      body: img
     })
     .then(response => response.json())
     .then(data => {
-      if (1 === 1) { // 현재 요청에 대한 응답인지 확인
-        const caption = data.caption
-        setSelectedCaption(caption)
-      }
+      const caption = data.caption
+      setSelectedCaption(caption)
     })
     .catch(error => {
         setSelectedCaption("Can't load caption.")
@@ -38,6 +38,14 @@ const DataAnalysis = ({images, initialImage, initialCaption}) => {
     .finally(() => {
       setLoading(false);
     });
+  }
+
+  const onOpenImage = () => {
+    var imageWin = new Image();
+    imageWin = window.open("", "", "width=2000px, height=1000px");
+    imageWin.document.write("<html><body style='margin:0'>");
+    imageWin.document.write("<img src='" + selectedImage + "' border=0>");
+    imageWin.document.write("</body><html>");
   }
 
   return (
@@ -54,10 +62,10 @@ const DataAnalysis = ({images, initialImage, initialCaption}) => {
           <>
             {loading ? (
                 <CircularProgress/>) : (
-                <img src={selectedImage} alt="Selected" className="selected-large-image" />
+                <img src={selectedImage} alt="Selected" className="selected-large-image" onClick={onOpenImage} style={{cursor: 'pointer'}} />
               )}
             <div className="image-description">
-              <p style={{ alignSelf: 'flex-start', color: 'var(--sub-text-color)', margin: '0' }}>추출된 캡션 데이터</p>
+              <p style={{ alignSelf: 'flex-start', color: 'var(--sub-text-color)', margin: '0' }}>Generated Caption</p>
             {loading ? (
                 <>...</>) : (
                 <>{selectedCaption}</>
@@ -69,7 +77,7 @@ const DataAnalysis = ({images, initialImage, initialCaption}) => {
         <h4 className='chat-title'>
           ChartEye AI
         </h4>
-        <Chat image={selectedImage} caption={selectedCaption}/>
+        <Chat image={selectedImage} caption={selectedCaption} messages={messages} setMessages={setMessages}/>
       </div>
     </div>
   </div>
