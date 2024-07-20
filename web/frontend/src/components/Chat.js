@@ -1,7 +1,6 @@
 import React, { useState,useEffect, useRef } from 'react';
 
-const ChatSystem = ({image, caption}) => {
-  const [messages, setMessages] = useState([]);
+const ChatSystem = ({image, caption, messages, setMessages}) => {
   const [inputText, setInputText] = useState('');
   const messageEndRef = useRef(null); 
 
@@ -33,7 +32,7 @@ const ChatSystem = ({image, caption}) => {
     const newMessage = { text: inputText, sender: 'user' };
     setMessages([...messages, newMessage]);
     setInputText('');
-    const aiMessage = { text: "답변 고민 중...", sender: 'ai', loading: true };
+    const aiMessage = { text: "Thinking...", sender: 'ai', loading: true };
     setMessages(current => [...current, aiMessage]);
     fetchAIResponse(inputText, messages.length+1);
 
@@ -50,7 +49,12 @@ const ChatSystem = ({image, caption}) => {
       const data = await response.json();
       setMessages(messages => {
         const updatedMessages = [...messages];
-        updatedMessages[index] = { ...updatedMessages[index], text: data.answer, loading: false };
+        updatedMessages[index] = { ...updatedMessages[index], text: "<b>Reasoning: </b>" + data.reasoning, loading: false };
+        
+        const additionalInfo = "<b>Answer: </b>" + data.answer;
+        const additionalMessage = { text: additionalInfo, sender: 'ai', loading: false, isAnswer:false };
+        updatedMessages.splice(index + 1, 0, additionalMessage); // 새 메시지를 배열에 추가
+  
         return updatedMessages;
       });
     } catch (error) {
@@ -69,16 +73,21 @@ const ChatSystem = ({image, caption}) => {
             <div className='messages'>
               {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender}`}>
-                {msg.sender === 'ai' && (
+                {msg.sender === 'ai' && (index % 3 === 1) && (
                   <>
                   <div className='chart-eye-container'>
                   <img src={msg.loading ? '/resources/icons/eye.gif' : '/resources/icons/eye.svg'} alt={msg.loading ? 'Loading' : 'Eye'} className="ai-icon"/>
                   </div>
                   </>
                 )}
-                <div className='message-text'>
-                {msg.text}
+                {msg.sender === 'ai' && (index % 3 === 2) && (
+                  <>
+                  <div className='chart-eye-container' style={{visibility: 'hidden'}}>
+                  <img src={msg.loading ? '/resources/icons/eye.gif' : '/resources/icons/eye.svg'} alt={msg.loading ? 'Loading' : 'Eye'} className="ai-icon"/>
                   </div>
+                  </>
+                )}
+                <div className='message-text' dangerouslySetInnerHTML={{ __html: msg.text }} />
               </div>
               ))}
               <div ref={messageEndRef} />
