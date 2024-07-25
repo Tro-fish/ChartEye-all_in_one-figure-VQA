@@ -1,14 +1,5 @@
-UniChart_Images/
-corning/
-lightning_logs/
-__pycache__/
-
-# dataset
-dataset/scicap_data/dataset
-dataset/scientific_figures_captions/dataset
-dataset/eval/
-
 # dependencies
+/web/
 node_modules/
 .pnp
 .pnp.js
