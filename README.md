@@ -1,7 +1,7 @@
 <div align="center">
 
 # ChartEye: Multi Modal QA Chatbot for Scientific Figure Images
-<br><b> ChartEye: Vision for Your Scientific Chart & Figure </b> <br><br>
+<b> ChartEye: Vision for Your Scientific Chart & Figure </b> <br><br>
 ![ChartEye](https://github.com/user-attachments/assets/8a135fdb-ebef-4bc3-a9b7-8560acf8d78a)
 <br>
 <p align="center">
