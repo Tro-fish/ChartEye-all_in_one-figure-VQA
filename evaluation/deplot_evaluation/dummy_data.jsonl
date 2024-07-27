@@ -1,5 +1,0 @@
-{"input": {"id": "1"}, "target": "title |\nyear | argentina | brazil\n1999 | 200 | 158\n", "prediction": "title |\nyear | argentina | brazil\n1999 | 200 | 122\n"}
-{"input": {"id": "2"}, "target": "title |\nyear | argentina | brazil\n2000 | 220 | 180\n", "prediction": "title |\nyear | argentina | brazil\n2000 | 215 | 185\n"}
-{"input": {"id": "3"}, "target": "title |\nyear | argentina | brazil\n2001 | 240 | 200\n", "prediction": "title |\nyear | argentina | brazil\n2001 | 250 | 210\n"}
-{"input": {"id": "4"}, "target": "title |\nyear | argentina | brazil\n2002 | 260 | 220\n", "prediction": "title |\nyear | argentina | brazil\n2002 | 255 | 225\n"}
-{"input": {"id": "5"}, "target": "title |\nyear | argentina | brazil\n2003 | 280 | 240\n", "prediction": "title |\nyear | argentina | brazil\n2003 | 290 | 230\n"}
