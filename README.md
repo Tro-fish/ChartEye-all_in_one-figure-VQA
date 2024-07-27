@@ -3,8 +3,7 @@
 # ChartEye: Multi Modal QA Chatbot for Scientific Figure Images
 <br><b> ChartEye: Vision for Your Scientific Chart & Figure </b> <br><br>
 ![ChartEye](https://github.com/user-attachments/assets/8a135fdb-ebef-4bc3-a9b7-8560acf8d78a)
-
-<br> <br>
+<br>
 <p align="center">
 <img src="https://github.com/user-attachments/assets/69ba6f4b-9691-46e4-9ef6-cf19cf4e9212" alt="Description of the image" width="100%" />
 </p>
