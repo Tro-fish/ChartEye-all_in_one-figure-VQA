@@ -7,7 +7,9 @@
 <img src="https://github.com/user-attachments/assets/69ba6f4b-9691-46e4-9ef6-cf19cf4e9212" alt="Description of the image" width="100%" />
 </p>
 
-This repository contains the code for ChartEye, including its implementation and execution instructions, for the Figure-to-Caption and QA Chatbot for Chemistry and Materials Science documents.
+This repository contains the code for ChartEye, including its implementation and execution instructions, 
+for the Figure-to-Caption and QA Chatbot for Chemistry and Materials Science documents.<br><br>
+<b>🏅 Achievement: 2024 [Corning](https://www.corning.com/) AI Challenge Grand Prize 🏅</b>
 </div>
 
 ## Main features
@@ -91,6 +93,35 @@ The repository has two branches:
 └── utils                           # Utilities
 ```
 
-## Implementation Details (technical report)
+# Implementation Details (technical report)
 In this section, we go into detail about how we implemented the functionality for each step.<br> If you simply want to use our application, you don't need to read it.
-### Step1
+## Step1 - Image Extraction from files
+<p align="center">
+<img src="https://github.com/user-attachments/assets/a769a2df-9e95-4930-af72-39ee30d5b572" alt="Description of the image" width="100%" />
+STEP1 Scenario: User uploads PDF, PPT, WORD files & Extract images from the input files</b><br>
+</p>
+
+- Extract images using external tools
+    - PDF: Extracting images with [pymupdf](https://pymupdf.readthedocs.io/en/latest/)
+    - WORD: Extracting images with [python-docx](https://python-docx.readthedocs.io/en/latest/)
+    - PPTX: Extracting images with [python-pptx](https://python-pptx.readthedocs.io/en/latest/)
+ 
+## Step2 - Figure Classification from image
+<p align="center">
+<img src="https://github.com/user-attachments/assets/632b3fff-a7d8-4cd1-b421-8ea968b82207" alt="Description of the image" width="100%" />
+<img src="https://github.com/user-attachments/assets/e16b0251-d9cd-4cb6-9cc8-73c086ac22e8" alt="Description of the image" width="100%" />
+<b>STEP2 Scenario: Extract only Figure images from the images & User selects the figure image they want to analyze and answer questions with the chatbot</b><br>
+</p>
+
+- Figure classficiation 모델을 학습하기 위해서 baseline 모델로 EfficientNet-B4를 사용
+- Pretrained EfficientNet-B4 모델에는 figure, table에 대한 class가 없기 때문에 데이터셋을 구축하고 추가 학습 진행
+- 우리의 Figure classficiation 모델은 여기서 확인 가능
+
+  
+<p align="center">
+<img src="https://github.com/user-attachments/assets/36631d3d-1f5c-4da1-b98d-7dd594d1d266" alt="Description of the image" width="100%" />
+<b>STEP2 Figure Classification dataset<br>
+</p>
+
+
+
