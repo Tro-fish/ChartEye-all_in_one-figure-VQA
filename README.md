@@ -2,7 +2,9 @@
 
 # ChartEye: Multi Modal QA Chatbot for Scientific Figure Images
 <br><b> ChartEye: Vision for Your Scientific Chart & Figure </b> <br><br>
-!!!!!!!!!여기에 gif 파일 넣기!!!!!!!!! <br> <br>
+![ChartEye](https://github.com/user-attachments/assets/8a135fdb-ebef-4bc3-a9b7-8560acf8d78a)
+
+<br> <br>
 <p align="center">
 <img src="https://github.com/user-attachments/assets/69ba6f4b-9691-46e4-9ef6-cf19cf4e9212" alt="Description of the image" width="100%" />
 </p>
@@ -53,12 +55,7 @@ npm run dev
 ```
 [localhost:3000](localhost:3000)
 
-## (참고) Repository Structure (참고) --> 우리도 이렇게 해야함
-The repository has two branches:
-- `main` branch contains the code for customizing HuggingFace's implmentation of the UDOP model
-- `custom` branch contains the code for customizing Microsoft's implmentation of the UDOP model
-
-
+## Repository Structure
 ``` bash
 .
 ├── LICENSE
