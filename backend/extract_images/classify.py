@@ -15,7 +15,7 @@ num_ftrs = model._fc.in_features
 model._fc = nn.Linear(num_ftrs, num_classes)
 model = model.to(device)
 
-model_weights_path = "../model/efficientnet_finetuned.pth"
+model_weights_path = "model/efficientnet_finetuned.pth"
 model.load_state_dict(torch.load(model_weights_path, map_location=torch.device('cpu')))
 model.eval()
 

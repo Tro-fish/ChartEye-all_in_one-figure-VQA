@@ -1,9 +1,9 @@
 # dependencies
-/web/
 node_modules/
 __pycache__/
 .pnp
 .pnp.js
+venv/
 
 # testing
 coverage/

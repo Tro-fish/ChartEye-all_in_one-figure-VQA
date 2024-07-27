@@ -42,13 +42,12 @@ conda activate charteye
 ```
 ### Install other dependencies
 ```
-cd frontend
 pip install -r requirements.txt
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 npm install
 ```
 ## Run Server (Only in Windows OS)
 ```
-cd frontend
 conda activate charteye
 npm run dev
 ```
@@ -65,14 +64,13 @@ Out of the box when you enter localhost:3000
 │   ├── extract_images/
 │   ├── web/
 │   └── manage.py
-├── frontend/                         # Frontend folder (react.js)
-│   ├── public/
-│   ├── src/
-│   ├── package-lock.json
-│   ├── package.json
-│   └── requirements.txt
 ├── model/                            # Model folder
 │   └── efficientnet_finetuned.pth
+├── public/                           # Frontend Server folder
+├── src/                              # Frontend Source folder
+├── package-lock.json
+├── package.json
+├── requirements.txt
 └── .gitignore
 ```
 
