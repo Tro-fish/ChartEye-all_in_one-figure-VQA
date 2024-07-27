@@ -52,7 +52,7 @@ cd frontend
 conda activate charteye
 npm run dev
 ```
-[localhost:3000](localhost:3000)
+Out of the box when you enter localhost:3000
 
 ## Repository Structure
 ``` bash
