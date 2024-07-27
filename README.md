@@ -1,10 +1,14 @@
 <div align="center">
 
-# ChartEye: Question and answer chatbot for scientific figure images
+# ChartEye: Multi Modal QA Chatbot for Scientific Figure Images
 
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-<br><b> ChartEye: Vision for Your Scientific Chart & Figure</b> <br><br>
-This repository contains the code for **ChartEye**, Figure-to-Caption for Chemistry, Materials Science document
+<br><b> ChartEye: Vision for Your Scientific Chart & Figure </b> <br><br>
+This repository contains the code for **ChartEye**, Figure-to-Caption and QA Chatbot for Chemistry, Materials Science document
+ChartEye's main features include the following
+- Extract figure image from PDF, PPTX, WORD files --> Image Extraction
+- Convert figure image to text explanation --> Chart Captioning
+- Convert imformation in a Figure image to a number --> Chart Derendering
+- Answer Question about the information in a chart imge --> Question Answering
 </div>
+
+## Overall Workflowc
