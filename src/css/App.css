@@ -1,0 +1,182 @@
+:root {
+  --main-color: #5A81FA;            /* 메인 색상 */
+  --container-back-color: #f2f4ff80;  /* 컨테이너 배경 색상 (50% 투명도) */
+  --container-back-color-hover:#A8B1CE4D;
+  --main-text-color: #1F1F1F;       /* 주 텍스트 색상 */
+  --sub-text-color: #696E82;
+  --unactive-text-color: #D9D9D9;   /* 비활성 텍스트 색상 */
+  --sub-color: #CEDEFF;             /* 보조 색상 */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+body {
+  font-family: 'Pretendard-Regular', sans-serif; 
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+@media(max-width:1024px){
+  .App{
+    min-height: 800px;
+  }
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+header {
+  font-family: 'Pretendard-SemiBold', sans-serif; 
+  cursor: default;
+}
+
+.logo-container{
+
+  font-family: 'Urbanist', sans-serif; 
+  font-size: 28px;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 8px;
+  height: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+}
+.logo-container img{
+  width: 32px;
+}
+.logo-corning{
+  color: var(--sub-text-color);
+  font-size: 24px !important;
+}
+.logo-charteye{
+  color: #2B308B;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.logo-image{
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: stretch;
+}
+.main-content-container{
+  margin-top: 4vh;
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+
+.button-next{
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.button-next.disabled{
+  background-color: var(--unactive-text-color);
+  cursor: default;
+
+}
+
+
+/* styles.css */
+.loading-container{
+  width: 80%;
+  height: 280px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 40px;
+  border-radius: 24px;  /* 이미지의 테두리 반경 */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+}
+.loading-container h3{
+  margin: 0;
+}
+.loading-container p.sub-text{
+  margin-bottom: 20px;
+  color: #696E82;
+}
+.loading-container p.percentage-text{
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: var(--main-color);
+}
+.loading-bar-container {
+  background-color: var(--unactive-text-color);
+  width: 80%; 
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.loading-bar-extract {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right,var(--sub-color),var(--main-color));
+  border-radius: 4px;
+  animation: loadProgress 65s ease-out forwards;
+}
+
+.loading-bar-caption {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right,var(--sub-color),var(--main-color));
+  border-radius: 4px;
+  animation: loadProgress 4s ease-out forwards;
+}
+
+@keyframes loadProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
