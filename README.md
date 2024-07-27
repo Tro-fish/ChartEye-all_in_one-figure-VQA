@@ -37,6 +37,7 @@ for the Figure-to-Caption and QA Chatbot for Chemistry and Materials Science doc
 ### Setup `python` environment
 ```
 conda create -n charteye python==3.10.10
+conda activate charteye
 ```
 ### Install other dependencies
 ```
